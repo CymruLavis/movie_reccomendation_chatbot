@@ -1,0 +1,12 @@
+USER: I need to find a movie, any type works
+SYSTEM: I found 10 you might like. How about Pillow Talk? It's rated 7.5
+USER: Who directed it?
+SYSTEM: It was directed by Michael Gordon
+USER: Any other films?
+SYSTEM: I found the Hotel Mumbai, it has a 7.8 rating
+USER: Do you have any movies with Mike Colter?
+SYSTEM: I found 1, how about Breakthrough, it is rated 5.6
+USER: Who directed the movie?
+SYSTEM: It was directed by Roxann Dawson
+USER: Thanks, that's all I need
+SYSTEM: Glad I could help

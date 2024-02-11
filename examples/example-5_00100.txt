@@ -1,0 +1,10 @@
+USER: Me and my friend need a movie to watch later
+SYSTEM: I can help with that! I've got 10 movies here - how do you feel about Red Joan? I've had a look at it has an average rating of 6.2
+USER: Not sure.. is there anything else?
+SYSTEM: What about Ramen Shop? It's got a rating of 6.8
+USER: No, don't really fancy that one either. Can you see if there's anything else? We quite like fantasy films, especially stuff directed by Neil Marshall.
+SYSTEM: Here's 1 for you: how about Hellboy? That's got a rating of 5.4
+USER: Yeah that one sounds better
+SYSTEM: Do you want me to help with anything else?
+USER: No thanks, that was all!
+SYSTEM: No problem, enjoy the movie

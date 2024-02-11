@@ -1,0 +1,418 @@
+{
+  "dialogue_id": "5_00088",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Drama"
+              ],
+              "slot": "genre",
+              "values": [
+                "drama"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 20,
+              "slot": "genre",
+              "start": 15
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "drama"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Can you find a drama film for me?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Dogman"
+              ],
+              "slot": "title",
+              "values": [
+                "Dogman"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.30"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.3"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "10"
+              ],
+              "slot": "count",
+              "values": [
+                "10"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "genre": "Drama"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.30",
+              "director": "Matteo Garrone",
+              "genre": "Drama",
+              "starring": "Giancarlo Porcacchia",
+              "title": "Dogman"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Iain Softley",
+              "genre": "Drama",
+              "starring": "John Bair",
+              "title": "Hackers"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Claire Denis",
+              "genre": "Drama",
+              "starring": "Agata Buzek",
+              "title": "High Life"
+            },
+            {
+              "aggregate_rating": "5.90",
+              "director": "Nia DaCosta",
+              "genre": "Drama",
+              "starring": "Luci Christian",
+              "title": "Little Woods"
+            },
+            {
+              "aggregate_rating": "5.80",
+              "director": "Garth Davis",
+              "genre": "Drama",
+              "starring": "Uri Gavriel",
+              "title": "Mary Magdalene"
+            },
+            {
+              "aggregate_rating": "6.80",
+              "director": "Eric Khoo",
+              "genre": "Drama",
+              "starring": "Tsuyoshi Ihara",
+              "title": "Ramen Shop"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Trevor Nunn",
+              "genre": "Drama",
+              "starring": "Stephen Boxer",
+              "title": "Red Joan"
+            },
+            {
+              "aggregate_rating": "4.10",
+              "director": "Qui Sheng",
+              "genre": "Drama",
+              "starring": "Huang Lu",
+              "title": "Suburban Birds"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Laszlo Nemes",
+              "genre": "Drama",
+              "starring": "Judit Bardos",
+              "title": "Sunset"
+            },
+            {
+              "aggregate_rating": "7.70",
+              "director": "Likarion Wainaina",
+              "genre": "Drama",
+              "starring": "Mercy Kariuki",
+              "title": "Supa Modo"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 41,
+              "slot": "title",
+              "start": 35
+            },
+            {
+              "exclusive_end": 52,
+              "slot": "aggregate_rating",
+              "start": 49
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found 10 movies for you. There's Dogman, rated 7.3."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Robin Bissell"
+              ],
+              "slot": "director",
+              "values": [
+                "Robin Bissell"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Sam Rockwell"
+              ],
+              "slot": "starring",
+              "values": [
+                "Sam Rockwell"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 57,
+              "slot": "director",
+              "start": 44
+            },
+            {
+              "exclusive_end": 83,
+              "slot": "starring",
+              "start": 71
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Robin Bissell"
+              ],
+              "genre": [
+                "drama"
+              ],
+              "starring": [
+                "Sam Rockwell"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Anything else? I want something directed by Robin Bissell and starring Sam Rockwell."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Best of Enemies"
+              ],
+              "slot": "title",
+              "values": [
+                "The Best of Enemies"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.00"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.0"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "director": "Robin Bissell",
+              "genre": "Drama",
+              "starring": "Sam Rockwell"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.00",
+              "director": "Robin Bissell",
+              "genre": "Drama",
+              "starring": "Sam Rockwell",
+              "title": "The Best of Enemies"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 27,
+              "slot": "title",
+              "start": 8
+            },
+            {
+              "exclusive_end": 38,
+              "slot": "aggregate_rating",
+              "start": 35
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "There's The Best of Enemies, rated 7.0."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Robin Bissell"
+              ],
+              "genre": [
+                "drama"
+              ],
+              "starring": [
+                "Sam Rockwell"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Sure."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Anything else I can get you?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Robin Bissell"
+              ],
+              "genre": [
+                "drama"
+              ],
+              "starring": [
+                "Sam Rockwell"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Nope, thanks."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "You're welcome."
+    }
+  ]
+}

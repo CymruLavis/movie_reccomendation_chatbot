@@ -1,0 +1,6 @@
+USER: I am looking for a movie directed by Elaine May to watch. Find something starring Rose Arrick.
+SYSTEM: I found 1 movie you might like. How about Mikey and Nicky? The movie has an average rating of 7.4.
+USER: Sure thing.
+SYSTEM: Anything else I can help with?
+USER: No, thanks a lot!
+SYSTEM: Happy to help

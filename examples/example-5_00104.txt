@@ -1,0 +1,8 @@
+USER: I want to find a movie.
+SYSTEM: Hackers has a rating of 6.2.
+USER: I am looking for a funny movie.
+SYSTEM: I found 10 movies including A Madea Family Funeral rated 4.2.
+USER: I want a movie directed by Harry Elfont and starring Harmoni Everett.
+SYSTEM: There is 1 movie rated 5.4 called Josie and the Pussycats.
+USER: That is fine.
+SYSTEM: I am happy to be of assistance.

@@ -1,0 +1,6 @@
+USER: Can you find a movie for me with Shayn Solberg?
+SYSTEM: There's Josie and the Pussycats, rated 5.4
+USER: Sure.
+SYSTEM: Can I help with anything else?
+USER: No, thank you.
+SYSTEM: You're welcome.

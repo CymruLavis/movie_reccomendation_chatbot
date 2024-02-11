@@ -1,0 +1,304 @@
+{
+  "dialogue_id": "5_00113",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Tom McCarthy"
+              ],
+              "slot": "director",
+              "values": [
+                "Tom McCarthy"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Walter the Dog"
+              ],
+              "slot": "starring",
+              "values": [
+                "Walter the Dog"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 48,
+              "slot": "director",
+              "start": 36
+            },
+            {
+              "exclusive_end": 72,
+              "slot": "starring",
+              "start": 58
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Tom McCarthy"
+              ],
+              "starring": [
+                "Walter the Dog"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Will you find me movies directed by Tom McCarthy starring Walter the Dog?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Visitor"
+              ],
+              "slot": "title",
+              "values": [
+                "The Visitor"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.70"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.7"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "director": "Tom McCarthy",
+              "starring": "Walter the Dog"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.70",
+              "director": "Tom McCarthy",
+              "genre": "Romance",
+              "starring": "Walter the Dog",
+              "title": "The Visitor"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 28,
+              "slot": "title",
+              "start": 17
+            },
+            {
+              "exclusive_end": 49,
+              "slot": "aggregate_rating",
+              "start": 46
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found 1 movie. The Visitor with a rating of 7.7."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "genre",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "genre"
+            ],
+            "slot_values": {
+              "director": [
+                "Tom McCarthy"
+              ],
+              "starring": [
+                "Walter the Dog"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "What genre?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Romance"
+              ],
+              "slot": "genre",
+              "values": [
+                "Romance"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 7,
+              "slot": "genre",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Romance."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Tom McCarthy"
+              ],
+              "starring": [
+                "Walter the Dog"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Great."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Anything else?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Tom McCarthy"
+              ],
+              "starring": [
+                "Walter the Dog"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "No, thanks."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Great. Have a nice day."
+    }
+  ]
+}

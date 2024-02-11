@@ -1,0 +1,4 @@
+USER: I want to watch a movie, preferably something by Jenny Gage. The romance genre would also work.
+SYSTEM: There's 1 movie you might like. It's called After and it has an average rating of 5.8
+USER: Okay, sounds good. That's all for now.
+SYSTEM: I'm glad to have helped you.

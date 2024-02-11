@@ -1,0 +1,6 @@
+USER: Find me a movie directed by Anna Boden in the Adventure category.
+SYSTEM: Search revealed 1 movie. Do you like Captain marvel. It is rated 7.1.
+USER: Yes, that works.
+SYSTEM: Do you need something more?
+USER: No, that is all. Thanks.
+SYSTEM: I am glad to help you.

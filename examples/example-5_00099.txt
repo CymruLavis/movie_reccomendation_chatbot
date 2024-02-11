@@ -1,0 +1,10 @@
+USER: I'd like to find a movie.
+SYSTEM: I have found 10 movies. Would you like to watch Gloria Bell. It has a rating of 6.7.
+USER: Can you find anything else?
+SYSTEM: There is a movie called Pillow Talk with a rating of 7.5.
+USER: Who directed this movie and what genre is it?
+SYSTEM: This is a romance movie directed by Michael Gordon.
+USER: How about something else like a comic film directed by Morton DaCosta?
+SYSTEM: What do you think about Auntie Mame. It has an average rating of 8.0
+USER: Perfect.
+SYSTEM: Happy to help.

@@ -1,0 +1,8 @@
+USER: I am in mood of watching a Drama movie, so I want to find one.
+SYSTEM: How would you consider watching Dogman? This movie's average rating is 7.3.
+USER: Can you see if there are some other movies? I usually enjoy watching a film directed by Alfred Hitchcock, and for the film to be starring ALix Talton.
+SYSTEM: I can see that there is 1 movie which you might like. How would like watching The Man Who Knew Too Much? This movie's rating is at 7.5.
+USER: That's a good one.
+SYSTEM: Is there something else I can help you with?
+USER: Nothing for now. I am thankful.
+SYSTEM: I am glad to have helped you.

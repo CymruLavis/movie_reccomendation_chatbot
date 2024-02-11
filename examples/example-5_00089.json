@@ -1,0 +1,355 @@
+{
+  "dialogue_id": "5_00089",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I'm up for watching a movie."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Poseidon Adventure"
+              ],
+              "slot": "title",
+              "values": [
+                "The Poseidon Adventure"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.10"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.10",
+              "director": "Ronald Neame",
+              "genre": "Adventure",
+              "starring": "Stella Stevens",
+              "title": "The Poseidon Adventure"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 22,
+              "slot": "title",
+              "start": 0
+            },
+            {
+              "exclusive_end": 35,
+              "slot": "aggregate_rating",
+              "start": 32
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "The Poseidon Adventure is rated 7.1."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Huang Lu"
+              ],
+              "slot": "starring",
+              "values": [
+                "Huang Lu"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 32,
+              "slot": "starring",
+              "start": 24
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "starring": [
+                "Huang Lu"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Have anything else with Huang Lu?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Suburban Birds"
+              ],
+              "slot": "title",
+              "values": [
+                "Suburban Birds"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "4.10"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "4.1"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "starring": "Huang Lu"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "4.10",
+              "director": "Qui Sheng",
+              "genre": "Drama",
+              "starring": "Huang Lu",
+              "title": "Suburban Birds"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 55,
+              "slot": "title",
+              "start": 41
+            },
+            {
+              "exclusive_end": 66,
+              "slot": "aggregate_rating",
+              "start": 63
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "There's 1 movie you might like. How does Suburban Birds with a 4.1 rating sound?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director"
+            ],
+            "slot_values": {
+              "starring": [
+                "Huang Lu"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who directed this?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Qui Sheng"
+              ],
+              "slot": "director",
+              "values": [
+                "Qui Sheng"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 18,
+              "slot": "director",
+              "start": 9
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Director Qui Sheng."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "starring": [
+                "Huang Lu"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Okay, sounds good."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Need help with anything else?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "starring": [
+                "Huang Lu"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Not right now, thanks."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I'm always happy to help out."
+    }
+  ]
+}

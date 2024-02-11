@@ -1,0 +1,6 @@
+USER: I want to watch a movie but am having a hard time finding anything good in all these titles. Can you find me something that stars Jeff Harding?
+SYSTEM: I found 1 movie for you titled Hackers and it has a 6.2 star rating. Does that sound appealing?
+USER: I don't know, what genre is the movie classified as and can you tell me who directed it?
+SYSTEM: Iain Softley directed the movie and it is considered to be a Drama.
+USER: Okay, that is all I needed help with at the moment.
+SYSTEM: Glad to be of service.

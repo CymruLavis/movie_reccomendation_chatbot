@@ -1,0 +1,533 @@
+{
+  "dialogue_id": "5_00105",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "dontcare"
+              ],
+              "slot": "genre",
+              "values": [
+                "dontcare"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I need to find a movie, any type works"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Pillow Talk"
+              ],
+              "slot": "title",
+              "values": [
+                "Pillow Talk"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.50"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.5"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "10"
+              ],
+              "slot": "count",
+              "values": [
+                "10"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.50",
+              "director": "Michael Gordon",
+              "genre": "Romance",
+              "starring": "Arlen Stuart",
+              "title": "Pillow Talk"
+            },
+            {
+              "aggregate_rating": "7.80",
+              "director": "Anthony Maras",
+              "genre": "Thriller",
+              "starring": "Dev Patel",
+              "title": "Hotel Mumbai"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Kevin Kolsch",
+              "genre": "Thriller",
+              "starring": "Sonia Maria Chirila",
+              "title": "Pet Sematary"
+            },
+            {
+              "aggregate_rating": "7.70",
+              "director": "Likarion Wainaina",
+              "genre": "Drama",
+              "starring": "Mercy Kariuki",
+              "title": "Supa Modo"
+            },
+            {
+              "aggregate_rating": "8.00",
+              "director": "Morton DaCosta",
+              "genre": "Comedy",
+              "starring": "Terry Kelman",
+              "title": "Auntie Mame"
+            },
+            {
+              "aggregate_rating": "5.80",
+              "director": "Garth Davis",
+              "genre": "Drama",
+              "starring": "Uri Gavriel",
+              "title": "Mary Magdalene"
+            },
+            {
+              "aggregate_rating": "7.60",
+              "director": "David Sandberg",
+              "genre": "Adventure",
+              "starring": "Mark Strong",
+              "title": "Shazam!"
+            },
+            {
+              "aggregate_rating": "5.90",
+              "director": "Nia DaCosta",
+              "genre": "Drama",
+              "starring": "Luci Christian",
+              "title": "Little Woods"
+            },
+            {
+              "aggregate_rating": "6.90",
+              "director": "Michael Schultz",
+              "genre": "Action",
+              "starring": "Faith Prince",
+              "title": "The Last Dragon"
+            },
+            {
+              "aggregate_rating": "5.40",
+              "director": "Neil Marshall",
+              "genre": "Fantasy",
+              "starring": "David Harbour",
+              "title": "Hellboy"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 48,
+              "slot": "title",
+              "start": 37
+            },
+            {
+              "exclusive_end": 64,
+              "slot": "aggregate_rating",
+              "start": 61
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found 10 you might like. How about Pillow Talk? It's rated 7.5"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director"
+            ],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who directed it?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Michael Gordon"
+              ],
+              "slot": "director",
+              "values": [
+                "Michael Gordon"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 33,
+              "slot": "director",
+              "start": 19
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "It was directed by Michael Gordon"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Any other films?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Hotel Mumbai"
+              ],
+              "slot": "title",
+              "values": [
+                "Hotel Mumbai"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.80"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.8"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 24,
+              "slot": "title",
+              "start": 12
+            },
+            {
+              "exclusive_end": 38,
+              "slot": "aggregate_rating",
+              "start": 35
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found the Hotel Mumbai, it has a 7.8 rating"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Mike Colter"
+              ],
+              "slot": "starring",
+              "values": [
+                "Mike Colter"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 39,
+              "slot": "starring",
+              "start": 28
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ],
+              "starring": [
+                "Mike Colter"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Do you have any movies with Mike Colter?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Breakthrough"
+              ],
+              "slot": "title",
+              "values": [
+                "Breakthrough"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "5.60"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "5.6"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "starring": "Mike Colter"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "5.60",
+              "director": "Roxann Dawson",
+              "genre": "Biographical",
+              "starring": "Mike Colter",
+              "title": "Breakthrough"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 33,
+              "slot": "title",
+              "start": 21
+            },
+            {
+              "exclusive_end": 50,
+              "slot": "aggregate_rating",
+              "start": 47
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found 1, how about Breakthrough, it is rated 5.6"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director"
+            ],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ],
+              "starring": [
+                "Mike Colter"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who directed the movie?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Roxann Dawson"
+              ],
+              "slot": "director",
+              "values": [
+                "Roxann Dawson"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 32,
+              "slot": "director",
+              "start": 19
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "It was directed by Roxann Dawson"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "dontcare"
+              ],
+              "starring": [
+                "Mike Colter"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Thanks, that's all I need"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Glad I could help"
+    }
+  ]
+}

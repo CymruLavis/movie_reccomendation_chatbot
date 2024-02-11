@@ -1,0 +1,8 @@
+USER: I need to find a movie to watch
+SYSTEM: I have 10, what about Little, it has a rating of 5.4 stars
+USER: What is the genre of the film?
+SYSTEM: Little is a comedy
+USER: Ok, sounds good
+SYSTEM: Is there anything else you need?
+USER: No, that's good thanks
+SYSTEM: Glad that I could have helped

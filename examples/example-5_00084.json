@@ -1,0 +1,480 @@
+{
+  "dialogue_id": "5_00084",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I'd like to watch a movie."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Dr. Strangelove"
+              ],
+              "slot": "title",
+              "values": [
+                "Dr. Strangelove"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "8.40"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "8.4"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "8.40",
+              "director": "Stanley Kubrick",
+              "genre": "Comedy",
+              "starring": "Frank Berry",
+              "title": "Dr. Strangelove"
+            },
+            {
+              "aggregate_rating": "8.30",
+              "director": "Peter Farrelly",
+              "genre": "Comedy",
+              "starring": "Mahershala Ali",
+              "title": "Green Book"
+            },
+            {
+              "aggregate_rating": "7.00",
+              "director": "Chris Butler",
+              "genre": "Comedy",
+              "starring": "David Walliams",
+              "title": "Missing Link"
+            },
+            {
+              "aggregate_rating": "5.40",
+              "director": "Harry Elfont",
+              "genre": "Comedy",
+              "starring": "Alexander Martin",
+              "title": "Josie and the Pussycats"
+            },
+            {
+              "aggregate_rating": "7.10",
+              "director": "Claus Rafle",
+              "genre": "Documentary",
+              "starring": "Florian Lukas",
+              "title": "The Invisibles"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Jonathan Levine",
+              "genre": "Comedy",
+              "starring": "Tristan D. Lalla",
+              "title": "Long Shot"
+            },
+            {
+              "aggregate_rating": "8.10",
+              "director": "George Miller",
+              "genre": "Fantasy",
+              "starring": "Gillian Jones",
+              "title": "Mad Max: Fury Road"
+            },
+            {
+              "aggregate_rating": "7.40",
+              "director": "Robert Budreau",
+              "genre": "Comedy",
+              "starring": "Shanti Roney",
+              "title": "Stockholm"
+            },
+            {
+              "aggregate_rating": "5.60",
+              "director": "Roxann Dawson",
+              "genre": "Biographical",
+              "starring": "Dennis Haysbert",
+              "title": "Breakthrough"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 37,
+              "slot": "title",
+              "start": 22
+            },
+            {
+              "exclusive_end": 56,
+              "slot": "aggregate_rating",
+              "start": 53
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "How do you feel about Dr. Strangelove. Its rating is 8.4."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Comedy"
+              ],
+              "slot": "genre",
+              "values": [
+                "funny"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 35,
+              "slot": "genre",
+              "start": 30
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "funny"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "What else do you have? I like funny movies."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "A Madea Family Funeral"
+              ],
+              "slot": "title",
+              "values": [
+                "A Madea Family Funeral"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "4.20"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "4.2"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "9"
+              ],
+              "slot": "count",
+              "values": [
+                "9"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "genre": "Comedy"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "4.20",
+              "director": "Tyler Perry",
+              "genre": "Comedy",
+              "starring": "Aeriel Miranda",
+              "title": "A Madea Family Funeral"
+            },
+            {
+              "aggregate_rating": "8.00",
+              "director": "Morton DaCosta",
+              "genre": "Comedy",
+              "starring": "Terry Kelman",
+              "title": "Auntie Mame"
+            },
+            {
+              "aggregate_rating": "8.40",
+              "director": "Stanley Kubrick",
+              "genre": "Comedy",
+              "starring": "Frank Berry",
+              "title": "Dr. Strangelove"
+            },
+            {
+              "aggregate_rating": "5.80",
+              "director": "Laura Steinel",
+              "genre": "Comedy",
+              "starring": "Joseph Poliquin",
+              "title": "Family"
+            },
+            {
+              "aggregate_rating": "6.70",
+              "director": "Sebastian Lelio",
+              "genre": "Comedy",
+              "starring": "Alanna Ubach",
+              "title": "Gloria Bell"
+            },
+            {
+              "aggregate_rating": "8.30",
+              "director": "Peter Farrelly",
+              "genre": "Comedy",
+              "starring": "Mahershala Ali",
+              "title": "Green Book"
+            },
+            {
+              "aggregate_rating": "5.40",
+              "director": "Harry Elfont",
+              "genre": "Comedy",
+              "starring": "Alexander Martin",
+              "title": "Josie and the Pussycats"
+            },
+            {
+              "aggregate_rating": "5.40",
+              "director": "Tina Gordon",
+              "genre": "Comedy",
+              "starring": "Palmer Williams Jr.",
+              "title": "Little"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Jonathan Levine",
+              "genre": "Comedy",
+              "starring": "Tristan D. Lalla",
+              "title": "Long Shot"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 73,
+              "slot": "title",
+              "start": 51
+            },
+            {
+              "exclusive_end": 92,
+              "slot": "aggregate_rating",
+              "start": 89
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I've got 9 possible results. How do you feel about A Madea Family Funeral? Its rating is 4.2."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "funny"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "What are the others?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Auntie Mame"
+              ],
+              "slot": "title",
+              "values": [
+                "Auntie Mame"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "8.00"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "8.0"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 20,
+              "slot": "title",
+              "start": 9
+            },
+            {
+              "exclusive_end": 39,
+              "slot": "aggregate_rating",
+              "start": 36
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I've got Auntie Mame. The rating is 8.0."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "funny"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Let's go with that."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Is there anything else?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "funny"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "No, that's it."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Glad to help."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+USER: What about a movie? Can you make some suggestions?
+SYSTEM: I can recommend you Dr. Strangelove, it is rated 8.4
+USER: Who is the director? What kind of movie is it?
+SYSTEM: It's by Stanley Kubrick and it's a comedy.
+USER: I might like it, thank you for the advice, bye.
+SYSTEM: I'm glad I could have helped you. Bye.

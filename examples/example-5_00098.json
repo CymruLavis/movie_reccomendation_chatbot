@@ -1,0 +1,426 @@
+{
+  "dialogue_id": "5_00098",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I want to watch a movie tonight, but I don't have any in mind."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Aftermath"
+              ],
+              "slot": "title",
+              "values": [
+                "The Aftermath"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "6.30"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "6.3"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "6.30",
+              "director": "James Kent",
+              "genre": "War",
+              "starring": "Flora Thiemann",
+              "title": "The Aftermath"
+            },
+            {
+              "aggregate_rating": "8.30",
+              "director": "Orson Welles",
+              "genre": "Mystery",
+              "starring": "Georgia Backus",
+              "title": "Citizen Kane"
+            },
+            {
+              "aggregate_rating": "6.50",
+              "director": "Neil Burger",
+              "genre": "Comedy",
+              "starring": "Junnie Lopez",
+              "title": "The Upside"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Laszlo Nemes",
+              "genre": "Drama",
+              "starring": "Judit Bardos",
+              "title": "Sunset"
+            },
+            {
+              "aggregate_rating": "7.40",
+              "director": "Elaine May",
+              "genre": "Mafia",
+              "starring": "John Cassavetes",
+              "title": "Mikey and Nicky"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 23,
+              "slot": "title",
+              "start": 10
+            },
+            {
+              "exclusive_end": 56,
+              "slot": "aggregate_rating",
+              "start": 53
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "How about The Aftermath? It has an average rating of 6.3, and I think you might like it."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director"
+            ],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Maybe. Who's the director?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "James Kent"
+              ],
+              "slot": "director",
+              "values": [
+                "James Kent"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 39,
+              "slot": "director",
+              "start": 29
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "The director of the movie is James Kent."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Romance"
+              ],
+              "slot": "genre",
+              "values": [
+                "Rom-com"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "dontcare"
+              ],
+              "slot": "starring",
+              "values": [
+                "dontcare"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 64,
+              "slot": "genre",
+              "start": 57
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "Rom-com"
+              ],
+              "starring": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "What else is there. I'm watching with my wife so maybe a Rom-com would be good."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "After"
+              ],
+              "slot": "title",
+              "values": [
+                "After"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "5.80"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "5.8"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "5"
+              ],
+              "slot": "count",
+              "values": [
+                "5"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "genre": "Romance"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "5.80",
+              "director": "Jenny Gage",
+              "genre": "Romance",
+              "starring": "Jose Alfredo Fernandez",
+              "title": "After"
+            },
+            {
+              "aggregate_rating": "7.50",
+              "director": "Michael Gordon",
+              "genre": "Romance",
+              "starring": "Arlen Stuart",
+              "title": "Pillow Talk"
+            },
+            {
+              "aggregate_rating": "7.40",
+              "director": "Cameron Crowe",
+              "genre": "Romance",
+              "starring": "Joan Cusack",
+              "title": "Say Anything"
+            },
+            {
+              "aggregate_rating": "7.70",
+              "director": "Tom McCarthy",
+              "genre": "Romance",
+              "starring": "Danai Gurira",
+              "title": "The Visitor"
+            },
+            {
+              "aggregate_rating": "6.40",
+              "director": "George Sidney",
+              "genre": "Romance",
+              "starring": "Teri Garr",
+              "title": "Viva Las Vegas"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 61,
+              "slot": "title",
+              "start": 56
+            },
+            {
+              "exclusive_end": 102,
+              "slot": "aggregate_rating",
+              "start": 99
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I've found 5 movies that match that criteria. How about After? The average rating of this movie is 5.8."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "Rom-com"
+              ],
+              "starring": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Sure. I've never heard of it, but we'll give it a shot."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Great. Is there anything else you need?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "Rom-com"
+              ],
+              "starring": [
+                "dontcare"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Nope, thanks for the movie idea."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I'm glad to have been able to help. Enjoy your night."
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "dialogue_id": "5_00077",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Drama"
+              ],
+              "slot": "genre",
+              "values": [
+                "Drama"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 32,
+              "slot": "genre",
+              "start": 27
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "genre": [
+                "Drama"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I am in mood of watching a Drama movie, so I want to find one."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Dogman"
+              ],
+              "slot": "title",
+              "values": [
+                "Dogman"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.30"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.3"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "genre": "Drama"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.30",
+              "director": "Matteo Garrone",
+              "genre": "Drama",
+              "starring": "Giancarlo Porcacchia",
+              "title": "Dogman"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Iain Softley",
+              "genre": "Drama",
+              "starring": "John Bair",
+              "title": "Hackers"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Claire Denis",
+              "genre": "Drama",
+              "starring": "Agata Buzek",
+              "title": "High Life"
+            },
+            {
+              "aggregate_rating": "5.90",
+              "director": "Nia DaCosta",
+              "genre": "Drama",
+              "starring": "Luci Christian",
+              "title": "Little Woods"
+            },
+            {
+              "aggregate_rating": "5.80",
+              "director": "Garth Davis",
+              "genre": "Drama",
+              "starring": "Uri Gavriel",
+              "title": "Mary Magdalene"
+            },
+            {
+              "aggregate_rating": "6.80",
+              "director": "Eric Khoo",
+              "genre": "Drama",
+              "starring": "Tsuyoshi Ihara",
+              "title": "Ramen Shop"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Trevor Nunn",
+              "genre": "Drama",
+              "starring": "Stephen Boxer",
+              "title": "Red Joan"
+            },
+            {
+              "aggregate_rating": "4.10",
+              "director": "Qui Sheng",
+              "genre": "Drama",
+              "starring": "Huang Lu",
+              "title": "Suburban Birds"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Laszlo Nemes",
+              "genre": "Drama",
+              "starring": "Judit Bardos",
+              "title": "Sunset"
+            },
+            {
+              "aggregate_rating": "7.70",
+              "director": "Likarion Wainaina",
+              "genre": "Drama",
+              "starring": "Mercy Kariuki",
+              "title": "Supa Modo"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 38,
+              "slot": "title",
+              "start": 32
+            },
+            {
+              "exclusive_end": 74,
+              "slot": "aggregate_rating",
+              "start": 71
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "How would you consider watching Dogman? This movie's average rating is 7.3."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Alfred Hitchcock"
+              ],
+              "slot": "director",
+              "values": [
+                "Alfred Hitchcock"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Alix Talton"
+              ],
+              "slot": "starring",
+              "values": [
+                "ALix Talton"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 104,
+              "slot": "director",
+              "start": 88
+            },
+            {
+              "exclusive_end": 149,
+              "slot": "starring",
+              "start": 138
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Alfred Hitchcock"
+              ],
+              "genre": [
+                "Drama"
+              ],
+              "starring": [
+                "ALix Talton"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Can you see if there are some other movies? I usually enjoy watching a film directed by Alfred Hitchcock, and for the film to be starring ALix Talton."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Man Who Knew Too Much"
+              ],
+              "slot": "title",
+              "values": [
+                "The Man Who Knew Too Much"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.50"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.5"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "director": "Alfred Hitchcock",
+              "genre": "Drama",
+              "starring": "Alix Talton"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "7.50",
+              "director": "Alfred Hitchcock",
+              "genre": "Drama",
+              "starring": "Alix Talton",
+              "title": "The Man Who Knew Too Much"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 103,
+              "slot": "title",
+              "start": 78
+            },
+            {
+              "exclusive_end": 134,
+              "slot": "aggregate_rating",
+              "start": 131
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I can see that there is 1 movie which you might like. How would like watching The Man Who Knew Too Much? This movie's rating is at 7.5."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Alfred Hitchcock"
+              ],
+              "genre": [
+                "Drama"
+              ],
+              "starring": [
+                "ALix Talton"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "That's a good one."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Is there something else I can help you with?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Alfred Hitchcock"
+              ],
+              "genre": [
+                "Drama"
+              ],
+              "starring": [
+                "ALix Talton"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Nothing for now. I am thankful."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I am glad to have helped you."
+    }
+  ]
+}

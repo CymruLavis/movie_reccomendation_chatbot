@@ -1,0 +1,479 @@
+{
+  "dialogue_id": "5_00099",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I'd like to find a movie."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Gloria Bell"
+              ],
+              "slot": "title",
+              "values": [
+                "Gloria Bell"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "6.70"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "6.7"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "10"
+              ],
+              "slot": "count",
+              "values": [
+                "10"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "6.70",
+              "director": "Sebastian Lelio",
+              "genre": "Comedy",
+              "starring": "Alanna Ubach",
+              "title": "Gloria Bell"
+            },
+            {
+              "aggregate_rating": "7.50",
+              "director": "Michael Gordon",
+              "genre": "Romance",
+              "starring": "Arlen Stuart",
+              "title": "Pillow Talk"
+            },
+            {
+              "aggregate_rating": "7.10",
+              "director": "Anna Boden",
+              "genre": "Adventure",
+              "starring": "Lashana Lynch",
+              "title": "Captain Marvel"
+            },
+            {
+              "aggregate_rating": "7.40",
+              "director": "Elaine May",
+              "genre": "Mafia",
+              "starring": "John Cassavetes",
+              "title": "Mikey and Nicky"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Tim Burton",
+              "genre": "Fantasy",
+              "starring": "Douglas Reith",
+              "title": "Dumbo"
+            },
+            {
+              "aggregate_rating": "6.60",
+              "director": "Jonathan Levine",
+              "genre": "Comedy",
+              "starring": "Tristan D. Lalla",
+              "title": "Long Shot"
+            },
+            {
+              "aggregate_rating": "7.70",
+              "director": "Tom McCarthy",
+              "genre": "Romance",
+              "starring": "Danai Gurira",
+              "title": "The Visitor"
+            },
+            {
+              "aggregate_rating": "7.00",
+              "director": "Robin Bissell",
+              "genre": "Drama",
+              "starring": "Caitlin Mehner",
+              "title": "The Best of Enemies"
+            },
+            {
+              "aggregate_rating": "5.60",
+              "director": "Roxann Dawson",
+              "genre": "Biographical",
+              "starring": "Dennis Haysbert",
+              "title": "Breakthrough"
+            },
+            {
+              "aggregate_rating": "7.30",
+              "director": "Hiroyasu Ishida",
+              "genre": "Fantasy",
+              "starring": "Kana Kita",
+              "title": "Penguin Highway"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 59,
+              "slot": "title",
+              "start": 48
+            },
+            {
+              "exclusive_end": 83,
+              "slot": "aggregate_rating",
+              "start": 80
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I have found 10 movies. Would you like to watch Gloria Bell. It has a rating of 6.7."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Can you find anything else?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Pillow Talk"
+              ],
+              "slot": "title",
+              "values": [
+                "Pillow Talk"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "7.50"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "7.5"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 35,
+              "slot": "title",
+              "start": 24
+            },
+            {
+              "exclusive_end": 56,
+              "slot": "aggregate_rating",
+              "start": 53
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "There is a movie called Pillow Talk with a rating of 7.5."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            },
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "genre",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director",
+              "genre"
+            ],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who directed this movie and what genre is it?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Michael Gordon"
+              ],
+              "slot": "director",
+              "values": [
+                "Michael Gordon"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Romance"
+              ],
+              "slot": "genre",
+              "values": [
+                "romance"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 50,
+              "slot": "director",
+              "start": 36
+            },
+            {
+              "exclusive_end": 17,
+              "slot": "genre",
+              "start": 10
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "This is a romance movie directed by Michael Gordon."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Morton DaCosta"
+              ],
+              "slot": "director",
+              "values": [
+                "Morton DaCosta"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Comedy"
+              ],
+              "slot": "genre",
+              "values": [
+                "comic"
+              ]
+            },
+            {
+              "act": "REQUEST_ALTS",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 69,
+              "slot": "director",
+              "start": 55
+            },
+            {
+              "exclusive_end": 37,
+              "slot": "genre",
+              "start": 32
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Morton DaCosta"
+              ],
+              "genre": [
+                "comic"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "How about something else like a comic film directed by Morton DaCosta?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Auntie Mame"
+              ],
+              "slot": "title",
+              "values": [
+                "Auntie Mame"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "8.00"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "8.0"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "director": "Morton DaCosta",
+              "genre": "Comedy"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "8.00",
+              "director": "Morton DaCosta",
+              "genre": "Comedy",
+              "starring": "Terry Kelman",
+              "title": "Auntie Mame"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 35,
+              "slot": "title",
+              "start": 24
+            },
+            {
+              "exclusive_end": 68,
+              "slot": "aggregate_rating",
+              "start": 65
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "What do you think about Auntie Mame. It has an average rating of 8.0"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Morton DaCosta"
+              ],
+              "genre": [
+                "comic"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Perfect."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Happy to help."
+    }
+  ]
+}

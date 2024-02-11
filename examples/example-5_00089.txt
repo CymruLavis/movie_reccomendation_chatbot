@@ -1,0 +1,10 @@
+USER: I'm up for watching a movie.
+SYSTEM: The Poseidon Adventure is rated 7.1.
+USER: Have anything else with Huang Lu?
+SYSTEM: There's 1 movie you might like. How does Suburban Birds with a 4.1 rating sound?
+USER: Who directed this?
+SYSTEM: Director Qui Sheng.
+USER: Okay, sounds good.
+SYSTEM: Need help with anything else?
+USER: Not right now, thanks.
+SYSTEM: I'm always happy to help out.

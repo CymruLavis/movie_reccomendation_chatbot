@@ -1,0 +1,10 @@
+USER: I want to watch a movie tonight, but I don't have any in mind.
+SYSTEM: How about The Aftermath? It has an average rating of 6.3, and I think you might like it.
+USER: Maybe. Who's the director?
+SYSTEM: The director of the movie is James Kent.
+USER: What else is there. I'm watching with my wife so maybe a Rom-com would be good.
+SYSTEM: I've found 5 movies that match that criteria. How about After? The average rating of this movie is 5.8.
+USER: Sure. I've never heard of it, but we'll give it a shot.
+SYSTEM: Great. Is there anything else you need?
+USER: Nope, thanks for the movie idea.
+SYSTEM: I'm glad to have been able to help. Enjoy your night.

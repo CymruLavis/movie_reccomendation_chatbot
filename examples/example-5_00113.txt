@@ -1,0 +1,8 @@
+USER: Will you find me movies directed by Tom McCarthy starring Walter the Dog?
+SYSTEM: I found 1 movie. The Visitor with a rating of 7.7.
+USER: What genre?
+SYSTEM: Romance.
+USER: Great.
+SYSTEM: Anything else?
+USER: No, thanks.
+SYSTEM: Great. Have a nice day.

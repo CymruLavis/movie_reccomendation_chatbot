@@ -1,0 +1,10 @@
+USER: I'd like to watch a movie.
+SYSTEM: How do you feel about Dr. Strangelove. Its rating is 8.4.
+USER: What else do you have? I like funny movies.
+SYSTEM: I've got 9 possible results. How do you feel about A Madea Family Funeral? Its rating is 4.2.
+USER: What are the others?
+SYSTEM: I've got Auntie Mame. The rating is 8.0.
+USER: Let's go with that.
+SYSTEM: Is there anything else?
+USER: No, that's it.
+SYSTEM: Glad to help.

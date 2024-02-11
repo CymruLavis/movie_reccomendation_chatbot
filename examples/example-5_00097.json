@@ -1,0 +1,276 @@
+{
+  "dialogue_id": "5_00097",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Michael Chaves"
+              ],
+              "slot": "director",
+              "values": [
+                "Michael Chaves"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 72,
+              "slot": "director",
+              "start": 58
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Michael Chaves"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Can you find a movie for me to watch that was directed by Michael Chaves?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "The Curse of La Llorona"
+              ],
+              "slot": "title",
+              "values": [
+                "The Curse of La Llorona"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "5.90"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "5.9"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "director": "Michael Chaves"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "5.90",
+              "director": "Michael Chaves",
+              "genre": "Horror",
+              "starring": "Roman Christou",
+              "title": "The Curse of La Llorona"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 61,
+              "slot": "title",
+              "start": 38
+            },
+            {
+              "exclusive_end": 75,
+              "slot": "aggregate_rating",
+              "start": 72
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Search revealed 1 result. Do you like The Curse of La Llorona? It has a 5.9 rating."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "starring",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "starring"
+            ],
+            "slot_values": {
+              "director": [
+                "Michael Chaves"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who starred in the movie?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Roman Christou"
+              ],
+              "slot": "starring",
+              "values": [
+                "Roman Christou"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 14,
+              "slot": "starring",
+              "start": 0
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Roman Christou starred in the movie."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Michael Chaves"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "That will work."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQ_MORE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Do you need any more help?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "NEGATE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "THANK_YOU",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "NONE",
+            "requested_slots": [],
+            "slot_values": {
+              "director": [
+                "Michael Chaves"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "No, not right now. Thanks."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I'm glad I could help you."
+    }
+  ]
+}

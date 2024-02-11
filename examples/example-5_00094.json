@@ -1,0 +1,276 @@
+{
+  "dialogue_id": "5_00094",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "What about a movie? Can you make some suggestions?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Dr. Strangelove"
+              ],
+              "slot": "title",
+              "values": [
+                "Dr. Strangelove"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "8.40"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "8.4"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {}
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "8.40",
+              "director": "Stanley Kubrick",
+              "genre": "Comedy",
+              "starring": "Frank Berry",
+              "title": "Dr. Strangelove"
+            },
+            {
+              "aggregate_rating": "5.80",
+              "director": "Garth Davis",
+              "genre": "Drama",
+              "starring": "Uri Gavriel",
+              "title": "Mary Magdalene"
+            },
+            {
+              "aggregate_rating": "7.40",
+              "director": "Elaine May",
+              "genre": "Mafia",
+              "starring": "John Cassavetes",
+              "title": "Mikey and Nicky"
+            },
+            {
+              "aggregate_rating": "5.60",
+              "director": "Roxann Dawson",
+              "genre": "Biographical",
+              "starring": "Dennis Haysbert",
+              "title": "Breakthrough"
+            },
+            {
+              "aggregate_rating": "6.20",
+              "director": "Claire Denis",
+              "genre": "Drama",
+              "starring": "Agata Buzek",
+              "title": "High Life"
+            },
+            {
+              "aggregate_rating": "8.30",
+              "director": "Orson Welles",
+              "genre": "Mystery",
+              "starring": "Georgia Backus",
+              "title": "Citizen Kane"
+            },
+            {
+              "aggregate_rating": "6.30",
+              "director": "James Kent",
+              "genre": "War",
+              "starring": "Flora Thiemann",
+              "title": "The Aftermath"
+            },
+            {
+              "aggregate_rating": "6.80",
+              "director": "Eric Khoo",
+              "genre": "Drama",
+              "starring": "Tsuyoshi Ihara",
+              "title": "Ramen Shop"
+            },
+            {
+              "aggregate_rating": "8.10",
+              "director": "George Miller",
+              "genre": "Fantasy",
+              "starring": "Gillian Jones",
+              "title": "Mad Max: Fury Road"
+            },
+            {
+              "aggregate_rating": "7.00",
+              "director": "Chris Butler",
+              "genre": "Comedy",
+              "starring": "David Walliams",
+              "title": "Missing Link"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 35,
+              "slot": "title",
+              "start": 20
+            },
+            {
+              "exclusive_end": 52,
+              "slot": "aggregate_rating",
+              "start": 49
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I can recommend you Dr. Strangelove, it is rated 8.4"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            },
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "genre",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director",
+              "genre"
+            ],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Who is the director? What kind of movie is it?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Stanley Kubrick"
+              ],
+              "slot": "director",
+              "values": [
+                "Stanley Kubrick"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Comedy"
+              ],
+              "slot": "genre",
+              "values": [
+                "comedy"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 23,
+              "slot": "director",
+              "start": 8
+            },
+            {
+              "exclusive_end": 41,
+              "slot": "genre",
+              "start": 35
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "It's by Stanley Kubrick and it's a comedy."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {}
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I might like it, thank you for the advice, bye."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I'm glad I could have helped you. Bye."
+    }
+  ]
+}

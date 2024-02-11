@@ -1,0 +1,253 @@
+{
+  "dialogue_id": "5_00082",
+  "services": [
+    "Movies_2"
+  ],
+  "turns": [
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Jeff Harding"
+              ],
+              "slot": "starring",
+              "values": [
+                "Jeff Harding"
+              ]
+            },
+            {
+              "act": "INFORM_INTENT",
+              "canonical_values": [
+                "FindMovies"
+              ],
+              "slot": "intent",
+              "values": [
+                "FindMovies"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 142,
+              "slot": "starring",
+              "start": 130
+            }
+          ],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "starring": [
+                "Jeff Harding"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I want to watch a movie but am having a hard time finding anything good in all these titles. Can you find me something that stars Jeff Harding?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "Hackers"
+              ],
+              "slot": "title",
+              "values": [
+                "Hackers"
+              ]
+            },
+            {
+              "act": "OFFER",
+              "canonical_values": [
+                "6.20"
+              ],
+              "slot": "aggregate_rating",
+              "values": [
+                "6.2"
+              ]
+            },
+            {
+              "act": "INFORM_COUNT",
+              "canonical_values": [
+                "1"
+              ],
+              "slot": "count",
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "service_call": {
+            "method": "FindMovies",
+            "parameters": {
+              "starring": "Jeff Harding"
+            }
+          },
+          "service_results": [
+            {
+              "aggregate_rating": "6.20",
+              "director": "Iain Softley",
+              "genre": "Drama",
+              "starring": "Jeff Harding",
+              "title": "Hackers"
+            }
+          ],
+          "slots": [
+            {
+              "exclusive_end": 38,
+              "slot": "title",
+              "start": 31
+            },
+            {
+              "exclusive_end": 55,
+              "slot": "aggregate_rating",
+              "start": 52
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "I found 1 movie for you titled Hackers and it has a 6.2 star rating. Does that sound appealing?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "genre",
+              "values": []
+            },
+            {
+              "act": "REQUEST",
+              "canonical_values": [],
+              "slot": "director",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [
+              "director",
+              "genre"
+            ],
+            "slot_values": {
+              "starring": [
+                "Jeff Harding"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "I don't know, what genre is the movie classified as and can you tell me who directed it?"
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Iain Softley"
+              ],
+              "slot": "director",
+              "values": [
+                "Iain Softley"
+              ]
+            },
+            {
+              "act": "INFORM",
+              "canonical_values": [
+                "Drama"
+              ],
+              "slot": "genre",
+              "values": [
+                "Drama"
+              ]
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [
+            {
+              "exclusive_end": 12,
+              "slot": "director",
+              "start": 0
+            },
+            {
+              "exclusive_end": 66,
+              "slot": "genre",
+              "start": 61
+            }
+          ]
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Iain Softley directed the movie and it is considered to be a Drama."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "SELECT",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            },
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": [],
+          "state": {
+            "active_intent": "FindMovies",
+            "requested_slots": [],
+            "slot_values": {
+              "starring": [
+                "Jeff Harding"
+              ]
+            }
+          }
+        }
+      ],
+      "speaker": "USER",
+      "utterance": "Okay, that is all I needed help with at the moment."
+    },
+    {
+      "frames": [
+        {
+          "actions": [
+            {
+              "act": "GOODBYE",
+              "canonical_values": [],
+              "slot": "",
+              "values": []
+            }
+          ],
+          "service": "Movies_2",
+          "slots": []
+        }
+      ],
+      "speaker": "SYSTEM",
+      "utterance": "Glad to be of service."
+    }
+  ]
+}

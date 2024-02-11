@@ -1,0 +1,6 @@
+USER: Can you find me a movie to watch?
+SYSTEM: How about Pillow Talk? It has an average rating of 7.5.
+USER: Can you find me a Romance movie starring Haaz Sleiman?
+SYSTEM: How about The Visitor? It has an average rating of 7.7.
+USER: Sure. That's all.
+SYSTEM: Happy to have helped.

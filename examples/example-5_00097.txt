@@ -1,0 +1,8 @@
+USER: Can you find a movie for me to watch that was directed by Michael Chaves?
+SYSTEM: Search revealed 1 result. Do you like The Curse of La Llorona? It has a 5.9 rating.
+USER: Who starred in the movie?
+SYSTEM: Roman Christou starred in the movie.
+USER: That will work.
+SYSTEM: Do you need any more help?
+USER: No, not right now. Thanks.
+SYSTEM: I'm glad I could help you.
