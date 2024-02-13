@@ -2,14 +2,19 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: quick reccomendation
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: FindMovies
+  - action: action_serach_movie
 
-- story: sad path 1
+- story: quick requiest
+  steps:
+  - intent: FindMovies
+  - action: action_serach_movie
+
+- story: unstatisfied customer
   steps:
   - intent: greet
   - action: utter_greet
@@ -19,7 +24,7 @@ stories:
   - intent: affirm
   - action: utter_happy
 
-- story: sad path 2
+- story: difficult customer
   steps:
   - intent: greet
   - action: utter_greet
@@ -28,4 +33,13 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: filter by starring
+  - checkpoint: starring slot was set
+
+- story: filter by rating
+
+- story: filter by director
+
+- story: filter by genre
 

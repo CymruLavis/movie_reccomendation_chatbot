@@ -29,5 +29,6 @@ genres = {
 }
 
 response = requests.get(url, headers=headers)
+data = response.json()
 
-print(type(response.text))
+print(data)

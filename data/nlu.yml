@@ -49,40 +49,6 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -91,3 +57,14 @@ nlu:
     - am I talking to a human?
 
 - intent: FindMovies
+  examples:|
+    - Can you recommend a good movie to watch?
+    - I'm looking for a movie suggestion, any ideas?
+    - I need a movie recommendation, any genre will do.
+    - I'm in the mood for a {genre}. Any suggestions?
+    - I want to watch a {genre}. Any recommendations?
+    - Do you know of any good {genre} movies?
+    - I loved {title}, can you recommend something similar?
+    - If I enjoyed [Actor/Actress]'s performance in {title}, what other movies might I like?
+    - I'm a big fan of {director}'s work. Any recommendations from their filmography?
+    # going to have to come up with lots of different ways to ask for a movie utilizing the different slots
