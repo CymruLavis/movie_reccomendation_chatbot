@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: find a movie
+  steps:
+  - intent: FindMovies
+  - action: action_serach_movie
