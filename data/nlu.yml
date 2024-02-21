@@ -29,6 +29,12 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - No thanks
+    - all good for now
+    - thank you for helping
+    - thanks for the help. Goodbye
+    - all good. I appreciate the help
+
 
 - intent: affirm
   examples: |
@@ -56,15 +62,69 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
+- intent: thank
+  examples: |
+    - thank you
+    - thanks
+    - ty
+    - Thanks a lot
+    - Thanks a bunch
+    - Thank you very much
+
+- intent: acceptSuggestion
+  examples: |
+    - thats great
+    - sounds good
+    - I like it
+    - good suggestion
+    - I like that
+    - good choice
+    - I can't wait
+    - That's a good one
+
 - intent: FindMovies
-  examples:|
+  examples: |
     - Can you recommend a good movie to watch?
     - I'm looking for a movie suggestion, any ideas?
     - I need a movie recommendation, any genre will do.
-    - I'm in the mood for a {genre}. Any suggestions?
-    - I want to watch a {genre}. Any recommendations?
-    - Do you know of any good {genre} movies?
-    - I loved {title}, can you recommend something similar?
-    - If I enjoyed [Actor/Actress]'s performance in {title}, what other movies might I like?
-    - I'm a big fan of {director}'s work. Any recommendations from their filmography?
-    # going to have to come up with lots of different ways to ask for a movie utilizing the different slots
+    - I'm in the mood for an [genre](thriller). Any suggestions?
+    - I want to watch a [genre](comedy). Any recommendations?
+    - Do you know of any good [genre]{action} movies?
+    - I loved [title](Marley and Me), can you recommend something similar?
+    - If I enjoyed [starring](Emily Blunt)'s performance in [title](Marry Poppins), what other movies might I like?
+    - I want to wat a [starring][Ryan Reynolds] movie. what do you reccomend?
+    - I'm a big fan of [director](Quentin Tarantino)'s work. Any recommendations?
+    - Can you recommend a movie with [starring](Leonardo DiCaprio)?
+    - I'm looking for a movie featuring [starring](Tom Hanks). Any suggestions?
+    - Could you suggest a good movie starring [starring](Emma Stone)?
+    - Do you know any [genre](action) movies with [starring](shia labeouf)?
+    - I'm in the mood for a [genre](comedy). Any films with [starring](Jim Carrey)?
+    - I'm interested in watching a [genre](thriller). Any recommendations starring [starring](Bruce Willis)?
+    - I love [director](Sofia Coppola)'s work. Any films they've done with [starring](Meryl Streep)?
+    - Are there any movies directed by [director](Spike Lee) that feature [starring](Rober De Niro)?
+    - Do you know of any collaborations between [actor's name] and [director/producer]?"
+    - Can you recommend any movies directed by [director](Christopher Nolan)?
+    - I'm a fan of [director](Quentin Tarantino)'s work. Any movie recommendations?
+    - What are some good films by [director](Steven Spielberg)?
+    - Show me movies directed by [director](Hayao Miyazaki).
+    - Any recommendations for movies from [director](Martin Scorsese)?
+    - I'm interested in watching films by [director](Stanley Kubrick). Any suggestions?
+    - Can you suggest some movies by [director](Greta Gerwig)?
+    - Looking for recommendations for movies directed by [director](Alfred Hitchcock).
+    - Which movies should I watch from [director](David Fincher)?
+    - I want to explore more movies by [director](Spike Lee). Any recommendations?
+    - Can you recommend me a [genre](Documentary) movie?
+    - I'm in the mood for a [genre](family) film, any recommendations?
+    - What's a good [genre](Science fiction) movie to watch?
+    - Looking for a great [genre](horror), any suggestions?
+    - Could you suggest a movie in the [genre](drama) category?
+    - Any recommendations for a [genre](crime) film?
+    - I'm interested in watching a [genre](war) movie, can you recommend one?
+    - Can you suggest a good movie from the [genre](western) genre?
+    - I want to watch something in the [genre](animation) category, what do you suggest?
+    - Do you have any recommendations for a [genre](adventure) movie?
+    - I'm craving a [genre](comedy) film, do you have any recommendations?
+    - Looking for something new to watch, preferably in the [genre](mystery) genre.
+    - What are some good [genre](romance) movies you'd recommend?
+    - I'm looking for a movie recommendation, specifically in the [genre](music) genre.
+    - Any suggestions for a great movie in the [genre](crime) category?

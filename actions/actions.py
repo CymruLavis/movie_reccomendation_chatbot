@@ -43,7 +43,7 @@ filters = ['with_cast', 'with_crew', 'with_genres']
 
 class ActionMovieSearch(Action):
     def name(self) -> Text:
-        return "action_serach_movie" #action name
+        return "action_search_movie" #action name
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
@@ -51,8 +51,9 @@ class ActionMovieSearch(Action):
         slots_with_ids = self.fill_id_slots(slots=slots) #fill slot values with ids
         results = self.get_suggestions(slots_with_ids)
         if results == "Empty":
-            pass
-            # use dispatcher to return something 
+            msg = "I couldn't find anything that matched your criteria. Please try for something else"
+            dispatcher.utter_message(text=msg)
+            return []
         else:
             suggestion = self.choose_suggestion(results)
 

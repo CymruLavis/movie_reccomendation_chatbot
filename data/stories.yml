@@ -1,45 +1,72 @@
 version: "3.1"
 
 stories:
-
-- story: quick reccomendation
+- story: greeting
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: FindMovies
-  - action: action_serach_movie
 
-- story: quick requiest
+- story: request without greeting
   steps:
   - intent: FindMovies
-  - action: action_serach_movie
+  - action: action_search_movie
+  - action: utter_movie_suggestion
 
-- story: unstatisfied customer
+- story: find movie by starring
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: FindMovies
+    entities:
+    - starring
+  - action: action_search_movie
+  - action: utter_suggestion_with_star
 
-- story: difficult customer
+- story: find movie by starring and genre
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: FindMovies
+    entities:
+    - starring
+    - genre
+  - action: action_search_movie
+  - action: utter_suggestion_with_star_and_genre
 
-- story: filter by starring
-  - checkpoint: starring slot was set
+- story: find movie by starring and director
+  steps:
+  - intent: FindMovies
+    entities:
+    - starring
+    - director
+  - action: action_search_movie
+  - action: utter_suggestion_with_star_and_director
 
-- story: filter by rating
+- story: find movie by starring and genre and director
+  steps:
+  - intent: FindMovies
+    entities:
+    - genre
+    - director
+  - action: action_search_movie
+  - action: utter_suggestion_with_genre_and_director
 
 - story: filter by director
+  steps:
+  - intent: FindMovies
+    entities:
+    - director
+  - action: action_search_movie
+  - action: utter_suggestion_with_director
 
 - story: filter by genre
+  steps:
+  - intent: FindMovies
+    entities:
+    - genre
+  - action: action_search_movie
+  - action: utter_suggestion_with_genre
+
+- story: goodbye
+  steps:
+  - intent: acceptSuggestion
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
 
