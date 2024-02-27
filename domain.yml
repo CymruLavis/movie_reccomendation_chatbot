@@ -1,105 +1,76 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - acceptSuggestion
-  - FindMovies
-    # use_entities:
-    #   - genre
-    #   - starring
-    #   - director
-    #   - title
-    #   - aggregate_rating
-  - bot_challenge
-  - thank
-
+- FindMovies
+- acceptSuggestion
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- thank
+- reset
 entities:
 - title
 - aggregate_rating
 - genre
 - starring
 - director
-
 slots:
   title:
     type: text
     mappings:
     - type: from_entity
-    entity: title
-  
+      entity: title
   aggregate_rating:
     type: float
     min_value: 0.0
     max_value: 10.0
     mappings:
     - type: from_entity
-    entity: aggregate_rating
-  
+      entity: aggregate_rating
   genre:
     type: text
     mappings:
     - type: from_entity
-    entity: genre
-
+      entity: genre
   starring:
     type: text
-    mappings: 
+    mappings:
     - type: from_entity
-    entity: starring
-
+      entity: starring
   director:
     type: text
     mappings:
     - type: from_entity
-    entity: director
-
+      entity: director
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Hello, how can I help you?
   utter_anything_else:
-  - text: "Can I help with anything else?"
-  - text: "Is there anything else I can do for you?"
-
+  - text: Can I help with anything else?
+  - text: Is there anything else I can do for you?
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_movie_suggestion:
-  - text: "How about {title}? It has a rating of {aggregate_score}."
-
+  - text: How about {title}? It has a rating of {aggregate_rating}.
   utter_suggestion_with_director:
-  - text: "{title} is directed by {director} and has a rating of {aggregate_score}."
-
+  - text: '{title} is directed by {director} and has a rating of {aggregate_rating}.'
   utter_suggestion_with_star:
-  - text: "{title} is starring {starring} and has a rating of {aggregate_score}."
-
+  - text: '{title} is starring {starring} and has a rating of {aggregate_rating}.'
   utter_suggestion_with_star_and_director:
-  - text: "{title} is directed by {director} and stars {starring}. It has be given a rating of {aggregate_score}."
-
+  - text: '{title} is directed by {director} and stars {starring}. It has be given a rating of {aggregate_rating}.'
   utter_suggestion_with_genre:
-  - text: "{title} is a {genre} and has be given a rating of {aggregate_score}."
-  
+  - text: '{title} is a {genre} and has be given a rating of {aggregate_rating}.'
   utter_suggestion_with_genre_and_star:
-  - text: "{title} is a {genre} with {starring} and has be given a rating of {aggregate_score}."
-
-utter_suggestion_with_genre_and_director:
-  - text: "{title} is a {genre} directed by {director} and has be given a rating of {aggregate_score}."
-
-utter_anything_else:
-  - text: "Can I help with anything else?"
-
-actions: 
-  - action_search_movie
-
+  - text: '{title} is a {genre} with {starring} and has be given a rating of {aggregate_rating}.'
+  utter_suggestion_with_genre_and_director:
+  - text: '{title} is a {genre} directed by {director} and has be given a rating of {aggregate_rating}.'
+actions:
+- utter_movie_suggestion
+- action_search_movie
+- reset_slots
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

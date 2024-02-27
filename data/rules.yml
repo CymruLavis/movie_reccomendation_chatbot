@@ -12,7 +12,7 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: find a movie
+- rule: reset the slots
   steps:
-  - intent: FindMovies
-  - action: action_serach_movie
+  - intent: reset
+  - action: reset_slots

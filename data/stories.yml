@@ -27,7 +27,7 @@ stories:
     - starring
     - genre
   - action: action_search_movie
-  - action: utter_suggestion_with_star_and_genre
+  - action: utter_suggestion_with_genre_and_star
 
 - story: find movie by starring and director
   steps:
@@ -69,4 +69,3 @@ stories:
   - action: utter_anything_else
   - intent: goodbye
   - action: utter_goodbye
-

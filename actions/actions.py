@@ -12,7 +12,7 @@ from rasa_sdk.events import SlotSet
 import requests
 import json
 
-api_access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5YTIzMGQyZjU4YWNjMzE3Yzg2Zjg5ZDhjN2IyMyIsInN1YiI6IjY1YzIzMWQ5MDkyOWY2MDE2MWU0YTc0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-TUBWSOE5-yUi8I8P1t5NrnHXN9BcZy3RATvNY5G2QQ"
+api_access_token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5YTIzMGQyZjU4YWNjMzE3Yzg2Zjg5ZDhjN2IyMyIsInN1YiI6IjY1YzIzMWQ5MDkyOWY2MDE2MWU0YTc0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-TUBWSOE5-yUi8I8P1t5NrnHXN9BcZy3RATvNY5G2QQ"
 url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
 headers = {
     "accept": "application/json",
@@ -47,7 +47,7 @@ class ActionMovieSearch(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        slots = self.get_slots(tracker, genres) #get slot values for api filters
+        slots = self.get_slots(tracker) #get slot values for api filters
         slots_with_ids = self.fill_id_slots(slots=slots) #fill slot values with ids
         results = self.get_suggestions(slots_with_ids)
         if results == "Empty":
@@ -58,33 +58,36 @@ class ActionMovieSearch(Action):
             suggestion = self.choose_suggestion(results)
 
 
+
         return [SlotSet("title", suggestion["title"]), 
-                SlotSet("aggregate_rating", suggestion["aggregate rating"]), 
+                SlotSet("aggregate_rating", suggestion["aggregate_rating"]), 
                 SlotSet("starring", suggestion["starring"]),
                 SlotSet("director", suggestion["director"]),
                 SlotSet("genre", suggestion["genre"])]  # may need to utilize dispatcher for returning values
     # https://www.youtube.com/watch?v=VcbfcsjBBIg
 
     
-    def get_slots(self, tracker, genres): 
-        return {"starring": tracker.get_slot('starring'),   #may need to have get_slot("text", None)
-                "starring_id": "",
+    def get_slots(self, tracker): 
+        slots = {"starring": tracker.get_slot('starring'),   #may need to have get_slot("text", None)
+                "starring_id":None,
                  "director": tracker.get_slot('director'),
-                 "director_id": "",
-                 "genre": genres[tracker.get_slot('genre').upper()],
-                 "genre_id": "",
+                 "director_id": None,
+                 "genre": tracker.get_slot('genre'),
+                 "genre_id": None,
                  "title": tracker.get_slot('title'),
-                 "rating": tracker.get_slot('aggregate_score')}
+                 "rating": tracker.get_slot('aggregate_rating')}
+        return slots
     
     def fill_id_slots(self, slots):
-        for key in slots:
-            if slots[key] != "":
+        for key in slots.keys():
+            if slots[key] is not None:
                 if key == "starring" or key == "director":
                     id_key = key+"_id"
                     slots[id_key] = self.get_person_id(slots[key])
                 elif key == "genre":
+                        slots[key] = slots[key]
                         id_key = key+"_id"
-                        slots[id_key] = genres[slots[key]]
+                        slots[id_key] = genres[slots[key.upper()]]
         return slots
     
     def get_suggestions(self, slots):
@@ -97,8 +100,8 @@ class ActionMovieSearch(Action):
                 people = self.get_movie_credits(movie_id)
                 useful_data = {
                     "title": data[i]['title'],
-                    "aggregate rating": data[i]['vote_average'],
-                    "genres": data[i]['genre_ids'],
+                    "aggregate_rating": data[i]['vote_average'],
+                    "genre": data[i]['genre_ids'],
                     "starring": people[0],
                     "director": people[1],
                 }
@@ -109,8 +112,16 @@ class ActionMovieSearch(Action):
 
     
     def build_url(self, slots):
-        return f"https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres={slots['genre_id']}&with_cast={slots['starring_id']}&with_crew={slots['director_id']}"
-
+        base_url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
+        if slots['starring_id'] is not None:
+            base_url = base_url + "&with_cast="+str(slots['starring_id'])
+        if slots['director_id'] is not None:
+            base_url = base_url + "&with_crew="+str(slots['director_id'])
+        if slots['genre_id'] is not None:
+            base_url = base_url + "&with_genres="+str(slots['genre_id'])
+        
+        return base_url
+    
     def get_movie_credits(self, movie_id):
         url = f"https://api.themoviedb.org/3/movie/{movie_id}/credits?language=en-US"
         response = requests.get(url, headers=headers)
@@ -134,13 +145,13 @@ class ActionMovieSearch(Action):
         max_score = 0
         max_ind=0
         for i in range(len(results)):
-            if results[i]['aggregate rating'] > max_score:
-                max_score = results[i]['aggregate rating']
+            if results[i]['aggregate_rating'] > max_score:
+                max_score = results[i]['aggregate_rating']
                 max_ind = i
         return {
             'title': results[max_ind]['title'],
-            'aggregate rating': results[max_ind]['aggregate rating'],
-            'genres': self.genre_id_to_str(results[max_ind]['genres']),
+            'aggregate_rating': results[max_ind]['aggregate_rating'],
+            'genre': self.genre_id_to_str(results[max_ind]['genre']),
             'starring': results[max_ind]['starring'],
             'director': results[max_ind]['director']
         }
@@ -151,3 +162,15 @@ class ActionMovieSearch(Action):
                 if val == genre_list[i]:
                     genre_list[i] = key
         return genre_list
+    
+class Reset(Action):
+    def name(self) -> Text:
+        return "reset_slots" #action name
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [SlotSet("title", None), 
+                SlotSet("aggregate_rating", None), 
+                SlotSet("starring", None),
+                SlotSet("director", None),
+                SlotSet("genre", None)]

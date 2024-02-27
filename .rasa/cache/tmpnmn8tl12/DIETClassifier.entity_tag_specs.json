@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-director",
+      "2": "I-director",
+      "3": "L-director",
+      "4": "U-director",
+      "5": "B-genre",
+      "6": "I-genre",
+      "7": "L-genre",
+      "8": "U-genre",
+      "9": "B-starring",
+      "10": "I-starring",
+      "11": "L-starring",
+      "12": "U-starring",
+      "13": "B-title",
+      "14": "I-title",
+      "15": "L-title",
+      "16": "U-title",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-director": 1,
+      "I-director": 2,
+      "L-director": 3,
+      "U-director": 4,
+      "B-genre": 5,
+      "I-genre": 6,
+      "L-genre": 7,
+      "U-genre": 8,
+      "B-starring": 9,
+      "I-starring": 10,
+      "L-starring": 11,
+      "U-starring": 12,
+      "B-title": 13,
+      "I-title": 14,
+      "L-title": 15,
+      "U-title": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

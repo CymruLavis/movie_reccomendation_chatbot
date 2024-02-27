@@ -1,0 +1,498 @@
+[
+  {
+    "text": "No thanks",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9998552799224854
+    }
+  },
+  {
+    "text": "all good for now",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.36157000064849854
+    }
+  },
+  {
+    "text": "thank you for helping",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6924470067024231
+    }
+  },
+  {
+    "text": "all good. I appreciate the help",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.46831709146499634
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4838479161262512
+    }
+  },
+  {
+    "text": "thanks",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6454211473464966
+    }
+  },
+  {
+    "text": "ty",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.861511766910553
+    }
+  },
+  {
+    "text": "Thanks a lot",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5217828750610352
+    }
+  },
+  {
+    "text": "Thanks a bunch",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7368370294570923
+    }
+  },
+  {
+    "text": "Thank you very much",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3988257944583893
+    }
+  },
+  {
+    "text": "thats great",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9998050332069397
+    }
+  },
+  {
+    "text": "sounds good",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9988149404525757
+    }
+  },
+  {
+    "text": "I like it",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5811525583267212
+    }
+  },
+  {
+    "text": "good suggestion",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9482294917106628
+    }
+  },
+  {
+    "text": "I like that",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9940246939659119
+    }
+  },
+  {
+    "text": "good choice",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9989145994186401
+    }
+  },
+  {
+    "text": "I can't wait",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8459345102310181
+    }
+  },
+  {
+    "text": "That's a good one",
+    "intent": "acceptSuggestion",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7564694285392761
+    }
+  },
+  {
+    "text": "Can you recommend a good movie to watch?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.916966438293457
+    }
+  },
+  {
+    "text": "I'm looking for a movie suggestion, any ideas?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.398775577545166
+    }
+  },
+  {
+    "text": "I need a movie recommendation, any genre will do.",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6221815347671509
+    }
+  },
+  {
+    "text": "I'm in the mood for an genre. Any suggestions?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5971632599830627
+    }
+  },
+  {
+    "text": "I want to watch a genre. Any recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9298051595687866
+    }
+  },
+  {
+    "text": "Do you know of any good genre movies?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4701139032840729
+    }
+  },
+  {
+    "text": "I loved title, can you recommend something similar?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.27517786622047424
+    }
+  },
+  {
+    "text": "If I enjoyed starring's performance in title, what other movies might I like?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6313256025314331
+    }
+  },
+  {
+    "text": "I want to wat a starring movie. what do you reccomend?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9401267170906067
+    }
+  },
+  {
+    "text": "I'm a big fan of director's work. Any recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.41322100162506104
+    }
+  },
+  {
+    "text": "Can you recommend a movie with starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9328952431678772
+    }
+  },
+  {
+    "text": "I'm looking for a movie featuring starring. Any suggestions?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8610578179359436
+    }
+  },
+  {
+    "text": "Could you suggest a good movie starring starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5656287670135498
+    }
+  },
+  {
+    "text": "Do you know any genre movies with starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6973355412483215
+    }
+  },
+  {
+    "text": "I'm in the mood for a genre. Any films with starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.37160560488700867
+    }
+  },
+  {
+    "text": "I'm interested in watching a genre. Any recommendations starring starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.4112182855606079
+    }
+  },
+  {
+    "text": "I love director's work. Any films they've done with starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5056519508361816
+    }
+  },
+  {
+    "text": "Are there any movies directed by director that feature starring?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6023098826408386
+    }
+  },
+  {
+    "text": "Do you know of any collaborations between [actor's name] and [director/producer]?\"",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5938165187835693
+    }
+  },
+  {
+    "text": "Can you recommend any movies directed by director?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.865508496761322
+    }
+  },
+  {
+    "text": "I'm a fan of director's work. Any movie recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3940240144729614
+    }
+  },
+  {
+    "text": "What are some good films by director?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7174960374832153
+    }
+  },
+  {
+    "text": "Show me movies directed by director.",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.7540451288223267
+    }
+  },
+  {
+    "text": "Any recommendations for movies from director?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3101004660129547
+    }
+  },
+  {
+    "text": "I'm interested in watching films by director. Any suggestions?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3364719748497009
+    }
+  },
+  {
+    "text": "Can you suggest some movies by director?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9803646802902222
+    }
+  },
+  {
+    "text": "Looking for recommendations for movies directed by director.",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4923534691333771
+    }
+  },
+  {
+    "text": "Which movies should I watch from director?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5269578695297241
+    }
+  },
+  {
+    "text": "I want to explore more movies by director. Any recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.520953893661499
+    }
+  },
+  {
+    "text": "Can you recommend me a genre movie?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6131272912025452
+    }
+  },
+  {
+    "text": "I'm in the mood for a genre film, any recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.33004486560821533
+    }
+  },
+  {
+    "text": "What's a good genre movie to watch?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7256183624267578
+    }
+  },
+  {
+    "text": "Looking for a great genre, any suggestions?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9980813264846802
+    }
+  },
+  {
+    "text": "Could you suggest a movie in the genre category?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3123265504837036
+    }
+  },
+  {
+    "text": "Any recommendations for a genre film?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.47012758255004883
+    }
+  },
+  {
+    "text": "I'm interested in watching a genre movie, can you recommend one?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.49010828137397766
+    }
+  },
+  {
+    "text": "Can you suggest a good movie from the genre genre?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.34445253014564514
+    }
+  },
+  {
+    "text": "I want to watch something in the genre category, what do you suggest?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4406163692474365
+    }
+  },
+  {
+    "text": "Do you have any recommendations for a genre movie?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6108206510543823
+    }
+  },
+  {
+    "text": "I'm craving a genre film, do you have any recommendations?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6372992396354675
+    }
+  },
+  {
+    "text": "Looking for something new to watch, preferably in the genre genre.",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8634240031242371
+    }
+  },
+  {
+    "text": "What are some good genre movies you'd recommend?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7624617218971252
+    }
+  },
+  {
+    "text": "I'm looking for a movie recommendation, specifically in the genre genre.",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5459992289543152
+    }
+  },
+  {
+    "text": "Any suggestions for a great movie in the genre category?",
+    "intent": "FindMovies",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9884049892425537
+    }
+  }
+]
