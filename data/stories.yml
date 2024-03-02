@@ -12,6 +12,7 @@ stories:
   - action: action_search_movie
   - action: utter_movie_suggestion
 
+
 - story: find movie by starring
   steps:
   - intent: FindMovies
@@ -63,9 +64,125 @@ stories:
   - action: action_search_movie
   - action: utter_suggestion_with_genre
 
+
+- story: clarify the director
+  steps:
+  - intent: clarify_director
+  - action: utter_confirm_director
+
+- story: clarify the star
+  steps:
+  - intent: clarify_starring
+  - action: utter_confirm_starring
+
+- story: clarify the genre
+  steps:
+  - intent: clarify_genre
+  - action: utter_confirm_genre
+
+
+- story: reset slots
+  steps:
+  - intent: reset
+  - action: reset_slots
+
 - story: goodbye
   steps:
   - intent: acceptSuggestion
   - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: null
+  - action: utter_movie_suggestion
+  - intent: FindMovies
+    entities:
+    - genre: romance
+  - slot_was_set:
+    - genre: romance
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Poor Things
+  - slot_was_set:
+    - aggregate_rating: 8.056
+  - slot_was_set:
+    - starring: Emma Stone
+  - slot_was_set:
+    - director: Yorgos Lanthimos
+  - slot_was_set:
+    - genre: romance
+  - action: utter_suggestion_with_genre
+  - intent: FindMovies
+    entities:
+    - director: Ryan
+  - slot_was_set:
+    - director: Ryan
+  - intent: FindMovies
+    entities:
+    - starring: Ryan Gosling
+  - action: action_search_movie
+  - slot_was_set:
+    - title: La La Land
+  - slot_was_set:
+    - aggregate_rating: 7.9
+  - slot_was_set:
+    - starring: Ryan Gosling
+  - slot_was_set:
+    - director: Damien Chazelle
+  - slot_was_set:
+    - genre: null
+  - action: utter_suggestion_with_star
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: greet
+
+- story: interactive_story_1
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: null
+  - action: utter_movie_suggestion
+  - intent: FindMovies
+    entities:
+    - starring: Jason
+  - slot_was_set:
+    - starring: Jason
+  - intent: FindMovies
+    entities:
+    - starring: Jason Momoa
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Zack Snyder's Justice League
+  - slot_was_set:
+    - aggregate_rating: 8.17
+  - slot_was_set:
+    - starring: Ben Affleck
+  - slot_was_set:
+    - director: Zack Snyder
+  - slot_was_set:
+    - genre: null
+  - action: utter_suggestion_with_star
   - intent: goodbye
   - action: utter_goodbye

@@ -47,15 +47,17 @@ class ActionMovieSearch(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        slots = self.get_slots(tracker) #get slot values for api filters
-        slots_with_ids = self.fill_id_slots(slots=slots) #fill slot values with ids
-        results = self.get_suggestions(slots_with_ids)
+        # old_slots = self.get_old_slots(tracker)
+        new_slots = self.get_new_slots(tracker) #get slot values for api filters
+        # self.set_old_slots(tracker)
+        slots_with_ids = self.fill_id_slots(slots=new_slots) #fill slot values with ids
+        results = self.get_suggestions(slots_with_ids, tracker)
         if results == "Empty":
             msg = "I couldn't find anything that matched your criteria. Please try for something else"
             dispatcher.utter_message(text=msg)
             return []
         else:
-            suggestion = self.choose_suggestion(results)
+            suggestion = self.choose_suggestion(results, tracker)
 
 
 
@@ -66,18 +68,33 @@ class ActionMovieSearch(Action):
                 SlotSet("genre", suggestion["genre"])]  # may need to utilize dispatcher for returning values
     # https://www.youtube.com/watch?v=VcbfcsjBBIg
 
+    # def get_old_slots(self, tracker):
+    #     slots = {"starring": tracker.get_slot("clarified_starring"),
+    #              "director": tracker.get_slot("clarified_director"),
+    #              "genre": tracker.get_slot("clarified_genre")
+    #             }
+    #     return slots
     
-    def get_slots(self, tracker): 
-        slots = {"starring": tracker.get_slot('starring'),   #may need to have get_slot("text", None)
+
+    # def set_old_slots(self, tracker):
+    #     if next(tracker.get_latest_entity_values("starring"), None) is not None:
+    #         tracker._set_slot('clarified_starring', next(tracker.get_latest_entity_values("starring")))
+    #     if next(tracker.get_latest_entity_values("director"), None) is not None:
+    #         tracker._set_slot('clarified_director', next(tracker.get_latest_entity_values("director")))
+    #     if next(tracker.get_latest_entity_values("genre"), None) is not None:
+    #         tracker._set_slot('clarified_genre', next(tracker.get_latest_entity_values("genre")))
+
+    def get_new_slots(self, tracker): 
+        slots = {"starring": next(tracker.get_latest_entity_values("starring"), None),
                 "starring_id":None,
-                 "director": tracker.get_slot('director'),
+                 "director": next(tracker.get_latest_entity_values("director"), None),
                  "director_id": None,
-                 "genre": tracker.get_slot('genre'),
+                 "genre": next(tracker.get_latest_entity_values("genre"), None),
                  "genre_id": None,
-                 "title": tracker.get_slot('title'),
-                 "rating": tracker.get_slot('aggregate_rating')}
+                 "title": None,
+                 "rating": None}        
         return slots
-    
+
     def fill_id_slots(self, slots):
         for key in slots.keys():
             if slots[key] is not None:
@@ -87,17 +104,17 @@ class ActionMovieSearch(Action):
                 elif key == "genre":
                         slots[key] = slots[key]
                         id_key = key+"_id"
-                        slots[id_key] = genres[slots[key.upper()]]
+                        slots[id_key] = genres[slots[key].upper()]
         return slots
     
-    def get_suggestions(self, slots):
+    def get_suggestions(self, slots, tracker):
         response = requests.get(self.build_url(slots), headers=headers)
         data = response.json()['results']
         if data:
             results = []
             for i in range(10):
                 movie_id = data[i]['id']
-                people = self.get_movie_credits(movie_id)
+                people = self.get_movie_credits(movie_id, tracker)
                 useful_data = {
                     "title": data[i]['title'],
                     "aggregate_rating": data[i]['vote_average'],
@@ -122,16 +139,23 @@ class ActionMovieSearch(Action):
         
         return base_url
     
-    def get_movie_credits(self, movie_id):
+    def get_movie_credits(self, movie_id, tracker):
         url = f"https://api.themoviedb.org/3/movie/{movie_id}/credits?language=en-US"
         response = requests.get(url, headers=headers)
-        starring = response.json()['cast'][0]['name']
+        starring = response.json()['cast']
         crew = response.json()['crew']
         director = ''
+        star_slot = tracker.get_slot('genre')
+        if star_slot is not None:
+            for star in starring:
+                if star['name'].lower() == star_slot.lower():
+                    starring = star['name']
+                    break
         for member in crew:
             if member['job'].lower() == 'director':
                 director = member['name']
         return starring, director
+    
     
     def get_person_id(self, person_name):
         person_name_no_spaces = person_name.replace(" ", "%20")
@@ -141,21 +165,35 @@ class ActionMovieSearch(Action):
         return response.json()['results'][0]['id']
     
 
-    def choose_suggestion(self, results):
+    def choose_suggestion(self, results, tracker):
         max_score = 0
         max_ind=0
         for i in range(len(results)):
             if results[i]['aggregate_rating'] > max_score:
                 max_score = results[i]['aggregate_rating']
                 max_ind = i
-        return {
+        suggestion =  {
             'title': results[max_ind]['title'],
             'aggregate_rating': results[max_ind]['aggregate_rating'],
-            'genre': self.genre_id_to_str(results[max_ind]['genre']),
+            'genre':self.choose_genre(self.genre_id_to_str(results[max_ind]['genre']), tracker),
             'starring': results[max_ind]['starring'],
             'director': results[max_ind]['director']
         }
-        
+        if suggestion["title"] == tracker.get_slot('title'):
+            del results[max_ind]
+            return self.choose_suggestion(results, tracker)
+        else:
+            return suggestion
+
+    def choose_genre(self, genres, tracker):
+        slot = tracker.get_slot('genre')
+        if slot is not None:
+            for genre in genres:
+                if genre == slot.upper():
+                    return genre
+        return None
+
+
     def genre_id_to_str(self, genre_list):
         for i in range(len(genre_list)):
             for key, val in genres.items():
@@ -169,8 +207,22 @@ class Reset(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        # intent_name = tracker.latest_message['intent'].get('name')
+        # if intent_name == "reset":
         return [SlotSet("title", None), 
-                SlotSet("aggregate_rating", None), 
-                SlotSet("starring", None),
-                SlotSet("director", None),
-                SlotSet("genre", None)]
+            SlotSet("aggregate_rating", None), 
+            SlotSet("starring", None),
+            SlotSet("director", None),
+            SlotSet("genre", None)]
+        
+# class SlotMapping(Action):
+#     def name(self) -> Text:
+#         return "map_slot"
+    
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+#         return[SlotSet('clarified_genre', tracker.get_slot('clarified_genre')),
+#                SlotSet('clarified_starring', tracker.get_slot('clarified_starring')),
+#                SlotSet('clarified_director', tracker.get_slot('clarified_director'))]

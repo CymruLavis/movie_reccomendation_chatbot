@@ -4,16 +4,19 @@ intents:
 - acceptSuggestion
 - affirm
 - bot_challenge
+- clarify_director
+- clarify_genre
+- clarify_starring
 - deny
 - goodbye
 - greet
-- thank
 - reset
+- thank
 entities:
+- starring
 - title
 - aggregate_rating
 - genre
-- starring
 - director
 slots:
   title:
@@ -50,7 +53,8 @@ responses:
   - text: Can I help with anything else?
   - text: Is there anything else I can do for you?
   utter_goodbye:
-  - text: Bye
+  - text: Glad I could help
+  - text: Great. Have a nice day
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_movie_suggestion:
@@ -67,9 +71,20 @@ responses:
   - text: '{title} is a {genre} with {starring} and has be given a rating of {aggregate_rating}.'
   utter_suggestion_with_genre_and_director:
   - text: '{title} is a {genre} directed by {director} and has be given a rating of {aggregate_rating}.'
+  utter_confirm_director:
+  - text: It was directed by {director}
+  - text: '{director}'
+  utter_confirm_starring:
+  - text: '{starring}'
+  - text: It starrs {starring}
+  utter_confirm_genre:
+  - text: '{genre}'
+  - text: It is a {genre} movie
 actions:
 - utter_movie_suggestion
 - action_search_movie
+- utter_goodbye
+- utter_suggestion_with_star
 - reset_slots
 session_config:
   session_expiration_time: 60
