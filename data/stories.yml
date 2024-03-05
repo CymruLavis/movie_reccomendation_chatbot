@@ -6,64 +6,10 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: request without greeting
+- story: request movie
   steps:
   - intent: FindMovies
   - action: action_search_movie
-  - action: utter_movie_suggestion
-
-
-- story: find movie by starring
-  steps:
-  - intent: FindMovies
-    entities:
-    - starring
-  - action: action_search_movie
-  - action: utter_suggestion_with_star
-
-- story: find movie by starring and genre
-  steps:
-  - intent: FindMovies
-    entities:
-    - starring
-    - genre
-  - action: action_search_movie
-  - action: utter_suggestion_with_genre_and_star
-
-- story: find movie by starring and director
-  steps:
-  - intent: FindMovies
-    entities:
-    - starring
-    - director
-  - action: action_search_movie
-  - action: utter_suggestion_with_star_and_director
-
-- story: find movie by starring and genre and director
-  steps:
-  - intent: FindMovies
-    entities:
-    - genre
-    - director
-  - action: action_search_movie
-  - action: utter_suggestion_with_genre_and_director
-
-- story: filter by director
-  steps:
-  - intent: FindMovies
-    entities:
-    - director
-  - action: action_search_movie
-  - action: utter_suggestion_with_director
-
-- story: filter by genre
-  steps:
-  - intent: FindMovies
-    entities:
-    - genre
-  - action: action_search_movie
-  - action: utter_suggestion_with_genre
-
 
 - story: clarify the director
   steps:
@@ -93,61 +39,55 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: FindMovies
-  - action: action_search_movie
-  - slot_was_set:
-    - title: 'Dune: Part Two'
-  - slot_was_set:
-    - aggregate_rating: 8.5
-  - slot_was_set:
-    - starring: Timothée Chalamet
-  - slot_was_set:
-    - director: Denis Villeneuve
-  - slot_was_set:
-    - genre: null
-  - action: utter_movie_suggestion
-  - intent: FindMovies
-    entities:
-    - genre: romance
-  - slot_was_set:
-    - genre: romance
-  - action: action_search_movie
-  - slot_was_set:
-    - title: Poor Things
-  - slot_was_set:
-    - aggregate_rating: 8.056
-  - slot_was_set:
-    - starring: Emma Stone
-  - slot_was_set:
-    - director: Yorgos Lanthimos
-  - slot_was_set:
-    - genre: romance
-  - action: utter_suggestion_with_genre
-  - intent: FindMovies
-    entities:
-    - director: Ryan
-  - slot_was_set:
-    - director: Ryan
-  - intent: FindMovies
-    entities:
-    - starring: Ryan Gosling
-  - action: action_search_movie
-  - slot_was_set:
-    - title: La La Land
-  - slot_was_set:
-    - aggregate_rating: 7.9
-  - slot_was_set:
-    - starring: Ryan Gosling
-  - slot_was_set:
-    - director: Damien Chazelle
-  - slot_was_set:
-    - genre: null
-  - action: utter_suggestion_with_star
-  - intent: goodbye
-  - action: utter_goodbye
-  - intent: greet
+
+# - story: find movie by starring
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - starring
+#   - action: action_search_movie
+
+# - story: find movie by starring and genre
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - starring
+#     - genre
+#   - action: action_search_movie
+
+# - story: find movie by starring and director
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - starring
+#     - director
+#   - action: action_search_movie
+
+# - story: find movie by starring and genre and director
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - genre
+#     - director
+#   - action: action_search_movie
+#   - action: utter_suggestion_with_genre_and_director
+
+# - story: filter by director
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - director
+#   - action: action_search_movie
+#   - action: utter_suggestion_with_director
+
+# - story: filter by genre
+#   steps:
+#   - intent: FindMovies
+#     entities:
+#     - genre
+#   - action: action_search_movie
+#   - action: utter_suggestion_with_genre
+
 
 - story: interactive_story_1
   steps:
@@ -156,33 +96,50 @@ stories:
   - slot_was_set:
     - title: 'Dune: Part Two'
   - slot_was_set:
-    - aggregate_rating: 8.5
+    - aggregate_rating: 8.463
   - slot_was_set:
     - starring: Timothée Chalamet
   - slot_was_set:
     - director: Denis Villeneuve
   - slot_was_set:
-    - genre: null
-  - action: utter_movie_suggestion
+    - genre: 'ACTION ADVENTURE SCIENCE FICTION '
   - intent: FindMovies
     entities:
-    - starring: Jason
+    - starring: Mathhew McConaughey
   - slot_was_set:
-    - starring: Jason
+    - starring: Mathhew McConaughey
+  - action: action_search_movie
   - intent: FindMovies
     entities:
-    - starring: Jason Momoa
+    - starring: Matthew McConaughey
+  - slot_was_set:
+    - starring: Matthew McConaughey
   - action: action_search_movie
   - slot_was_set:
-    - title: Zack Snyder's Justice League
+    - title: 'Deep in the Heart: A Texas Wildlife Story'
   - slot_was_set:
-    - aggregate_rating: 8.17
+    - aggregate_rating: 9.0
   - slot_was_set:
-    - starring: Ben Affleck
+    - starring: Matthew McConaughey
   - slot_was_set:
-    - director: Zack Snyder
+    - director: Ben Masters
   - slot_was_set:
-    - genre: null
-  - action: utter_suggestion_with_star
+    - genre: 'DOCUMENTARY '
+  - intent: FindMovies
+    entities:
+    - genre: action
+  - slot_was_set:
+    - genre: action
+  - action: action_search_movie
+  - slot_was_set:
+    - title: The Gentlemen
+  - slot_was_set:
+    - aggregate_rating: 7.676
+  - slot_was_set:
+    - starring: Matthew McConaughey
+  - slot_was_set:
+    - director: Guy Ritchie
+  - slot_was_set:
+    - genre: 'ACTION CRIME COMEDY '
   - intent: goodbye
   - action: utter_goodbye

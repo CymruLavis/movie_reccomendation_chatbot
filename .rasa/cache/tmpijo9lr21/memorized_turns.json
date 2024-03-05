@@ -1,0 +1,20 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xErBLTMvxTe/LDO1uLY2FgB2nx1i": "action_search_movie",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xErBLTMvxTe/LDO1uJY4g4pTE4uSM+JzQXrwGxcLADJBO3k=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BCSdnFpQElyanp5aDFJYWxsLADE+IAY=": "utter_anything_else",
+    "eJyNjEEKgCAURK/iATqB12gZISKDfbCf6DcI8e4pta/dPObxltomVWPCaawTOlir+gzDdodWLwTKAu5uyUjdIe4o43aIMhfvkYfYPnJFBMlYvmQj9gYh4090vQFFvEDs": "action_listen",
+    "eJyljkEKgCAURK/iATpB12gZIWaDfaiv6DcI8e4ZtW/Rbh7zGGYstVMlRBzaWCHPvSpP0Gx29OqFjZKAm5sTYnOIG8pdWwQZsnNIt1g/5rIIojZ8ykrsNLaE/6MfH533y3yi1ukCrp9bkg==": "utter_goodbye",
+    "eJyljkEKgCAURK/iATpB12gZIWaDCfUN/QYh3T2jWoZBuxnm8Zg27ZVIi8cqlWbrqBbpCpLUjFrcZbKBQZmNAT4zlnLlc9ZYuInGIJzgXtBFZnipaOPRkpGYAv5LCx+Nc0O/4du1B363dAdkfnZI": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhKLU4taS2NhYA6i0bkQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOSexKDOtMj4lsyg1uSS/qLY2FgAyQCAT": "utter_confirm_director",
+    "eJyNjNEJgDAMBVfJAE7QVURKiSkEaippKkjp7hYU/NS/d3Dv5tYnaLvS4QMaZ3HQ7uElbOTggcTFSIZbC+lwWAaaA0xBOZ5+ZSW0rP0jV81IPWaJrNv7+tFdLhRAQkU=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOSexKDOtMj49Na8otbY2FgDTfh7I": "utter_confirm_genre",
+    "eJyFjNEJwCAMBVfJAJ3AVUoJIrEENJYYC0XcvUL97987uHd7Hxv0S+lGH4yLOOjfQPGZHCxIXI1kuq2STodlojkIySvHB08SpfHTamakGIpE1rwuf8XjBb99PmQ=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOSexKDOtMr64JLGoKDMvvbY2FgAzGCAh": "utter_confirm_starring",
+    "eJyNjNEJgDAMBVfJAE7QVURCKakE2ihpKkjp7hYU/NS/d3Dv5tYnaLvSgT4Yb+Kg3QPFZ3LwQOJiJMOthXQ4LAPNQUheOZ5YzKuyrP0jV81IMWwSWfP7+tFdLh10Qm8=": "action_listen"
+  }
+}

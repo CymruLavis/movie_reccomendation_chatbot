@@ -2,21 +2,19 @@ version: '3.1'
 intents:
 - FindMovies
 - acceptSuggestion
-- affirm
 - bot_challenge
 - clarify_director
 - clarify_genre
 - clarify_starring
-- deny
 - goodbye
 - greet
 - reset
 - thank
 entities:
 - starring
+- genre
 - title
 - aggregate_rating
-- genre
 - director
 slots:
   title:
@@ -57,20 +55,6 @@ responses:
   - text: Great. Have a nice day
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_movie_suggestion:
-  - text: How about {title}? It has a rating of {aggregate_rating}.
-  utter_suggestion_with_director:
-  - text: '{title} is directed by {director} and has a rating of {aggregate_rating}.'
-  utter_suggestion_with_star:
-  - text: '{title} is starring {starring} and has a rating of {aggregate_rating}.'
-  utter_suggestion_with_star_and_director:
-  - text: '{title} is directed by {director} and stars {starring}. It has be given a rating of {aggregate_rating}.'
-  utter_suggestion_with_genre:
-  - text: '{title} is a {genre} and has be given a rating of {aggregate_rating}.'
-  utter_suggestion_with_genre_and_star:
-  - text: '{title} is a {genre} with {starring} and has be given a rating of {aggregate_rating}.'
-  utter_suggestion_with_genre_and_director:
-  - text: '{title} is a {genre} directed by {director} and has be given a rating of {aggregate_rating}.'
   utter_confirm_director:
   - text: It was directed by {director}
   - text: '{director}'
@@ -81,10 +65,9 @@ responses:
   - text: '{genre}'
   - text: It is a {genre} movie
 actions:
-- utter_movie_suggestion
 - action_search_movie
 - utter_goodbye
-- utter_suggestion_with_star
+- utter_movie_suggestion
 - reset_slots
 session_config:
   session_expiration_time: 60

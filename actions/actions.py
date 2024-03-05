@@ -46,7 +46,7 @@ class ActionMovieSearch(Action):
         return "action_search_movie" #action name
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        
         # old_slots = self.get_old_slots(tracker)
         new_slots = self.get_new_slots(tracker) #get slot values for api filters
         # self.set_old_slots(tracker)
@@ -58,16 +58,47 @@ class ActionMovieSearch(Action):
             return []
         else:
             suggestion = self.choose_suggestion(results, tracker)
-
-
+            self.send_message(suggestion, dispatcher, new_slots)
 
         return [SlotSet("title", suggestion["title"]), 
                 SlotSet("aggregate_rating", suggestion["aggregate_rating"]), 
                 SlotSet("starring", suggestion["starring"]),
                 SlotSet("director", suggestion["director"]),
                 SlotSet("genre", suggestion["genre"])]  # may need to utilize dispatcher for returning values
-    # https://www.youtube.com/watch?v=VcbfcsjBBIg
 
+
+
+
+
+
+
+
+
+    def send_message(self, suggestion, dispatcher, new_slots):
+        if new_slots['starring'] is None and new_slots['director'] is  None and new_slots['genre'] is  None:
+            message = f"How about {suggestion['title']}? It has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is None and new_slots['director'] is not None and new_slots['genre'] is None:
+            message = f"{suggestion['title']} is directed by {suggestion['director']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is not None and new_slots['director'] is None and new_slots['genre'] is None:
+            message = f"{suggestion['title']}, is starring {suggestion['starring']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is not None and new_slots['director'] is not None and new_slots['genre'] is None:
+            message = f"{suggestion['title']} is starring {suggestion['starring']} and directed by {suggestion['director']}. It has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is None and new_slots['director'] is None and new_slots['genre'] is not None:
+            message = f"{suggestion['title']} is a {suggestion['genre']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is not None and new_slots['director'] is None and new_slots['genre'] is not None:
+            message = f"{suggestion['title']} is a {suggestion['genre']} with {suggestion['starring']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is None and new_slots['director'] is not None and new_slots['genre'] is not None:
+            message = f"{suggestion['title']} is a {suggestion['genre']} directed by {suggestion['director']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
+        elif new_slots['starring'] is not None and new_slots['director'] is not None and new_slots['genre'] is not None:
+            message = f"{suggestion['title']} is a {suggestion['genre']} directed by {suggestion['director']}. It is starring {suggestion['starring']} and has a rating of {suggestion['aggregate_rating']}"
+            dispatcher.utter_message(text=message)
     # def get_old_slots(self, tracker):
     #     slots = {"starring": tracker.get_slot("clarified_starring"),
     #              "director": tracker.get_slot("clarified_director"),
@@ -85,15 +116,37 @@ class ActionMovieSearch(Action):
     #         tracker._set_slot('clarified_genre', next(tracker.get_latest_entity_values("genre")))
 
     def get_new_slots(self, tracker): 
-        slots = {"starring": next(tracker.get_latest_entity_values("starring"), None),
+        slots = {"starring": self.get_entity(tracker=tracker, entity_name='starring'),
                 "starring_id":None,
-                 "director": next(tracker.get_latest_entity_values("director"), None),
+                 "director":self.get_entity(tracker=tracker, entity_name='director'),
                  "director_id": None,
-                 "genre": next(tracker.get_latest_entity_values("genre"), None),
+                 "genre": self.get_entity(tracker=tracker, entity_name='genre'),
                  "genre_id": None,
                  "title": None,
-                 "rating": None}        
+                 "rating": None}     
+        # slots = {"starring": next(tracker.get_latest_entity_values("starring"), None),
+        #         "starring_id":None,
+        #          "director": next(tracker.get_latest_entity_values("director"), None),
+        #          "director_id": None,
+        #          "genre": next(tracker.get_latest_entity_values("genre"), None),
+        #          "genre_id": None,
+        #          "title": None,
+        #          "rating": None}        
         return slots
+    def get_entity(self, tracker, entity_name):
+        entity_values = []
+
+        # Iterate over the events in the tracker to extract entity values
+        for event in tracker.events:
+            if 'parse_data' in event:
+                for entity in event['parse_data']['entities']:
+                    if entity['entity'] == entity_name and entity['value'] is not None:
+                        entity_values.append(entity['value'])
+        if entity_values:
+            return entity_values[-1]
+        else:
+            return None
+
 
     def fill_id_slots(self, slots):
         for key in slots.keys():
@@ -112,7 +165,8 @@ class ActionMovieSearch(Action):
         data = response.json()['results']
         if data:
             results = []
-            for i in range(10):
+            iterations = min(10, len(data))
+            for i in range(iterations):
                 movie_id = data[i]['id']
                 people = self.get_movie_credits(movie_id, tracker)
                 useful_data = {
@@ -142,15 +196,9 @@ class ActionMovieSearch(Action):
     def get_movie_credits(self, movie_id, tracker):
         url = f"https://api.themoviedb.org/3/movie/{movie_id}/credits?language=en-US"
         response = requests.get(url, headers=headers)
-        starring = response.json()['cast']
+        starring = response.json()['cast'][0]['name']
         crew = response.json()['crew']
         director = ''
-        star_slot = tracker.get_slot('genre')
-        if star_slot is not None:
-            for star in starring:
-                if star['name'].lower() == star_slot.lower():
-                    starring = star['name']
-                    break
         for member in crew:
             if member['job'].lower() == 'director':
                 director = member['name']
@@ -186,12 +234,14 @@ class ActionMovieSearch(Action):
             return suggestion
 
     def choose_genre(self, genres, tracker):
+        slot_string = ""
         slot = tracker.get_slot('genre')
-        if slot is not None:
+        if genres is not None:
             for genre in genres:
-                if genre == slot.upper():
-                    return genre
-        return None
+                slot_string += f"{genre.capitalize()}, "
+            return slot_string
+        else:
+            return None
 
 
     def genre_id_to_str(self, genre_list):
@@ -214,15 +264,3 @@ class Reset(Action):
             SlotSet("starring", None),
             SlotSet("director", None),
             SlotSet("genre", None)]
-        
-# class SlotMapping(Action):
-#     def name(self) -> Text:
-#         return "map_slot"
-    
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#         return[SlotSet('clarified_genre', tracker.get_slot('clarified_genre')),
-#                SlotSet('clarified_starring', tracker.get_slot('clarified_starring')),
-#                SlotSet('clarified_director', tracker.get_slot('clarified_director'))]

@@ -3,6 +3,7 @@ nlu:
 - intent: reset
   examples: |
     - reset
+    - reset slots
 - intent: clarify_genre
   examples: |
     - what genre
@@ -23,12 +24,6 @@ nlu:
     - who is the main character
     - who stars in that film
     - whi is in that movie
-- intent: accept_suggestion
-  examples: |
-    - great
-    - that works
-    - that is fine
-    - I like that
 - intent: greet
   examples: |
     - hey
@@ -65,6 +60,7 @@ nlu:
     - that is all
     - great thanks
     - I like it. thank you
+    - thats great. thanks
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -133,7 +129,99 @@ nlu:
     - What movie should i watch
     - what movie should i watch
     - can you recommend a [romance](genre)
-    - how about one with [Ryan Gosling](starring) 
+    - how about one with [Ryan Gosling](starring)
     - can you suggest one with [Ryan Gosling](starring)
     - i would like to watch a movie
     - could you reccomend something with [Jason Momoa](starring)
+    - how about one with [Tom Hanks](starring)
+    - could you recommend one starring [Leonardo DiCaprio](starring)
+    - could you suggest one with [Meryl Streep](starring)
+    - how about one with [Brad Pitt](starring)
+    - could you recommend one starring [Johnny Depp](starring)
+    - could you suggest one with [Denzel Washington](starring)
+    - how about one with [Jennifer Lawrence](starring)
+    - could you recommend one starring [Sandra Bullock](starring)
+    - could you suggest one with [Robert De Niro](starring)
+    - how about one with [Angelina Jolie](starring)
+    - could you recommend one starring [Will Smith](starring)
+    - could you suggest one with [Emma Stone](starring)
+    - how about one with [George Clooney](starring)
+    - could you recommend one starring [Julia Roberts](starring)
+    - could you suggest one with [Chris Hemsworth](starring)
+    - how about one with [Natalie Portman](starring)
+    - could you recommend one starring [Christian Bale](starring)
+    - could you suggest one with [Scarlett Johansson](starring)
+    - how about one with [Matt Damon](starring)
+    - could you recommend one starring [Anne Hathaway](starring)
+    - could you suggest one with [Mark Wahlberg](starring)
+    - how about one with [Cate Blanchett](starring)
+    - could you recommend one starring [Daniel Radcliffe](starring)
+    - could you suggest one with [Nicole Kidman](starring)
+    - how about one with [Tom Cruise](starring)
+    - could you recommend one starring [Chris Evans](starring)
+    - could you suggest one with [Jennifer Aniston](starring)
+    - how about one with [Jake Gyllenhaal](starring)
+    - could you recommend one starring [Hugh Jackman](starring)
+    - could you suggest one with [Charlize Theron](starring)
+    - how about one with [Matthew McConaughey](starring)
+    - could you recommend one starring [Bradley Cooper](starring)
+    - could you suggest one with [Anne Bancroft](starring)
+    - how about one with [Al Pacino](starring)
+    - could you recommend one starring [Morgan Freeman](starring)
+    - could you suggest one with [Jodie Foster](starring)
+    - how about one with [Eddie Redmayne](starring)
+    - could you recommend one starring [Drew Barrymore](starring)
+    - could you suggest one with [Harrison Ford](starring)
+    - how about one with [Sylvester Stallone](starring)
+    - could you recommend one starring [Emma Watson](starring)
+    - could you suggest one with [Julianne Moore](starring)
+    - could you recommend one starring [Michelle Pfeiffer](starring)
+    - could you suggest one with [Jack Nicholson](starring)
+    - how about one with [Dwayne Johnson](starring)
+    - could you recommend one starring [Tom Hardy](starring)
+    - could you suggest one with [Cameron Diaz](starring)
+    - how about one with [John Travolta](starring)
+    - could you recommend one starring [Kate Winslet](starring)
+    - could you suggest one with [Ben Affleck](starring)
+    - how about one with [Julia Stiles](starring)
+    - could you recommend one starring [Bruce Willis](starring)
+    - could you suggest one with [Mila Kunis](starring)
+    - how about one with [Keanu Reeves](starring)
+    - could you recommend one starring [Angelica Huston](starring)
+    - could you suggest one with [Kevin Costner](starring)
+    - how about one with [Renee Zellweger](starring)
+    - could you recommend one starring [Woody Harrelson](starring)
+    - could you suggest one with [Viola Davis](starring)
+    - how about one with [Dustin Hoffman](starring)
+    - could you recommend one starring [Charlton Heston](starring)
+    - could you suggest one with [Sarah Jessica Parker](starring)
+    - how about one with [Sean Connery](starring)
+    - could you recommend one starring [Saoirse Ronan](starring)
+    - could you suggest one with [Catherine Zeta-Jones](starring)
+    - how about one with [Timothée Chalamet](starring)
+    - could you recommend one starring [Katherine Hepburn](starring)
+    - could you suggest one with [Shirley MacLaine](starring)
+    - how about one with [Daniel Craig](starring)
+    - could you recommend one starring [Audrey Hepburn](starring)
+    - could you suggest one with [Anthony Hopkins](starring)
+    - how about one with [Freddie Highmore](starring)
+    - could you recommend one starring [Grace Kelly](starring)
+    - could you suggest one with [Liam Neeson](starring)
+    - how about one with [Zac Efron](starring)
+    - could you recommend one starring [Elizabeth Taylor](starring)
+    - could you suggest one with [Samuel L. Jackson](starring)
+    - how about one with [Michelle Williams](starring)
+    - could you recommend one starring [Antonio Banderas](starring)
+    - could you suggest one with [Maggie Smith](starring)
+    - how about one with [James Franco](starring)
+    - could you recommend one starring [Gwyneth Paltrow](starring)
+    - could you suggest one with [Dakota Fanning](starring)
+    - how about one with [Jeff Bridges](starring)
+    - could you recommend one starring [Kate Hudson](starring)
+    - could you suggest one with [Michael Fassbender](starring)
+    - how about one with [Angelique Pettyjohn](starring)
+    - could you recommend one starring [Natalie Wood](starring)
+    - could you suggest one with [Matt Bomer](starring)
+    - could you reccomend something starring [Mathhew McConaughey](starring)
+    - could you reccomend something starring [Matthew McConaughey](starring)
+    - how about an [action](genre) movie

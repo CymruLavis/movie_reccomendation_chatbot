@@ -3,9 +3,6 @@ digraph  {
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
 2 [class=active, fontsize=12, label=action_search_movie];
-3 [class=active, fontsize=12, label=utter_movie_suggestion];
-4 [class=active, fontsize=12, label=action_search_movie];
-5 [class=active, fontsize=12, label=utter_suggestion_with_star];
 6 [class=active, fontsize=12, label=utter_goodbye];
 7 [class="intent dashed active", label="  ?  ", shape=rect];
 8 [class="intent active", fillcolor=lightblue, label="/FindMovies", shape=rect, style=filled];
@@ -14,12 +11,10 @@ digraph  {
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
 1 -> 8  [class=active, key=0];
-2 -> 3  [class=active, key=NONE, label=""];
-3 -> 9  [class=active, key=0];
-4 -> 5  [class=active, key=NONE, label=""];
-5 -> 10  [class=active, key=0];
+2 -> 9  [class=active, key=0];
+2 -> 10  [class=active, key=0];
 6 -> 7  [class=active, key=NONE, label=""];
 8 -> 2  [class=active, key=0];
-9 -> 4  [class=active, key=0];
+9 -> 2  [class=active, key=0];
 10 -> 6  [class=active, key=0];
 }
