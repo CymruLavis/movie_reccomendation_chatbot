@@ -1,1 +1,43 @@
-# None of the test stories failed - all good!
+version: "3.1"
+stories:
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: action_default_fallback
+- story: happy path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: action_default_fallback
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sad path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm  # predicted: goodbye: yes
+  - action: utter_happy  # predicted: action_default_fallback
+- story: sad path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny  # predicted: goodbye: not really
+  - action: utter_goodbye  # predicted: action_default_fallback
+- story: sad path 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: FindMovies: very terrible
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny  # predicted: goodbye: no
+  - action: utter_goodbye  # predicted: action_default_fallback

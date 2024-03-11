@@ -50,7 +50,7 @@ class ActionMovieSearch(Action):
         # old_slots = self.get_old_slots(tracker)
         new_slots = self.get_new_slots(tracker) #get slot values for api filters
         # self.set_old_slots(tracker)
-        slots_with_ids = self.fill_id_slots(slots=new_slots) #fill slot values with ids
+        slots_with_ids = self.fill_id_slots(slots=new_slots, dispatcher=dispatcher) #fill slot values with ids
         results = self.get_suggestions(slots_with_ids, tracker)
         if results == "Empty":
             msg = "I couldn't find anything that matched your criteria. Please try for something else"
@@ -148,16 +148,24 @@ class ActionMovieSearch(Action):
             return None
 
 
-    def fill_id_slots(self, slots):
+    def fill_id_slots(self, slots, dispatcher):
         for key in slots.keys():
             if slots[key] is not None:
                 if key == "starring" or key == "director":
                     id_key = key+"_id"
                     slots[id_key] = self.get_person_id(slots[key])
                 elif key == "genre":
-                        slots[key] = slots[key]
+                        # slots[key] = slots[key]
                         id_key = key+"_id"
-                        slots[id_key] = genres[slots[key].upper()]
+                        try:
+                            slots[id_key] = genres[slots[key].upper()]
+                        except KeyError:
+                            message = f"I couldn't find anything with the genre: {slots[key]}"                             
+                            dispatcher.utter_message(text=message)
+                            slots[id_key] = None
+                            slots[key] = None
+
+
         return slots
     
     def get_suggestions(self, slots, tracker):
@@ -169,14 +177,27 @@ class ActionMovieSearch(Action):
             for i in range(iterations):
                 movie_id = data[i]['id']
                 people = self.get_movie_credits(movie_id, tracker)
-                useful_data = {
-                    "title": data[i]['title'],
-                    "aggregate_rating": data[i]['vote_average'],
-                    "genre": data[i]['genre_ids'],
-                    "starring": people[0],
-                    "director": people[1],
-                }
-                results.append(useful_data)
+                if slots['director']:
+                    if people[1].lower() != slots['director'].lower():
+                        pass
+                    else:
+                        useful_data = {
+                            "title": data[i]['title'],
+                            "aggregate_rating": data[i]['vote_average'],
+                            "genre": data[i]['genre_ids'],
+                            "starring": people[0],
+                            "director": people[1],
+                        }
+                        results.append(useful_data)
+                else:
+                    useful_data = {
+                        "title": data[i]['title'],
+                        "aggregate_rating": data[i]['vote_average'],
+                        "genre": data[i]['genre_ids'],
+                        "starring": people[0],
+                        "director": people[1],
+                    }
+                    results.append(useful_data)
             return results
         else:
             return "Empty"
@@ -209,9 +230,10 @@ class ActionMovieSearch(Action):
         person_name_no_spaces = person_name.replace(" ", "%20")
         url = f"https://api.themoviedb.org/3/search/person?query={person_name_no_spaces}&include_adult=false&language=en-US&page=1"
         response = requests.get(url, headers=headers)
-
-        return response.json()['results'][0]['id']
-    
+        if response.json()['results']:
+            return response.json()['results'][0]['id']
+        else:
+            return None
 
     def choose_suggestion(self, results, tracker):
         max_score = 0

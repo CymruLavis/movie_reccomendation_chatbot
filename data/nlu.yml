@@ -13,6 +13,7 @@ nlu:
     - what is the genre of that movie
     - what kind of film
     - whats the genre
+    - What genre is it?
 - intent: clarify_director
   examples: |
     - who's the director
@@ -23,7 +24,8 @@ nlu:
   examples: |
     - who is the main character
     - who stars in that film
-    - whi is in that movie
+    - who is in that movie
+    - who is the star of this film?
 - intent: greet
   examples: |
     - hey
@@ -61,6 +63,14 @@ nlu:
     - great thanks
     - I like it. thank you
     - thats great. thanks
+    - no thanks. good bye
+    - I like that thanks
+    - This movie is fine, thanks
+    - Ok thanks. That's it for now
+    - I want to see that
+    - That is all today.
+    - No thanks.
+    - That's good. That's all I need for now.
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -77,6 +87,8 @@ nlu:
     - good choice
     - I can't wait
     - That's a good one
+    - Ok. This is perfect
+    - great
 - intent: FindMovies
   examples: |
     - Can you recommend a good movie to watch?
@@ -217,6 +229,7 @@ nlu:
     - could you recommend one starring [Gwyneth Paltrow](starring)
     - could you suggest one with [Dakota Fanning](starring)
     - how about one with [Jeff Bridges](starring)
+    - how about one with [Jeff Goldblum](starring)
     - could you recommend one starring [Kate Hudson](starring)
     - could you suggest one with [Michael Fassbender](starring)
     - how about one with [Angelique Pettyjohn](starring)
@@ -225,3 +238,52 @@ nlu:
     - could you reccomend something starring [Mathhew McConaughey](starring)
     - could you reccomend something starring [Matthew McConaughey](starring)
     - how about an [action](genre) movie
+    - i would like to see a moive directed by [Michael Bay](director)
+    - i would like to watch an [action](genre) movie directed by [michael bay]{"entity": "director", "value": "Michael Bay"}
+    - how about one with s[hia labeouf]{"entity": "starring", "value": "Shia Labeouf"}
+    - I'd like a movie directed by [Steven Spielberg](director)
+    - What about one directed by [Christopher Nolan](director)?
+    - Could you suggest one directed by [Quentin Tarantino](director)?
+    - I'd like a movie directed by [Martin Scorsese](director)
+    - What about one directed by [Alfred Hitchcock](director)?
+    - Could you suggest one directed by [Stanley Kubrick](director)?
+    - I'd like a movie directed by [Francis Ford Coppola](director)
+    - What about one directed by [James Cameron](director)?
+    - Could you suggest one directed by [Akira Kurosawa](director)?
+    - I'd like a movie directed by [Spike Lee](director)
+    - What about one directed by [David Fincher](director)?
+    - Could you suggest one directed by [Paul Thomas Anderson](director)?
+    - I'd like a movie directed by [Greta Gerwig](director)
+    - What about one directed by [Hayao Miyazaki](director)?
+    - Could you suggest one directed by [Jordan Peele](director)?
+    - I'd like a movie directed by [Denis Villeneuve](director)
+    - What about one directed by [Guillermo del Toro](director)?
+    - Could you suggest one directed by [Wes Anderson](director)?
+    - I'd like a movie directed by [Taika Waititi](director)
+    - What about one directed by [Kathryn Bigelow](director)?
+    - Could you suggest one directed by [Bong Joon-ho](director)?
+    - I'd like a movie directed by [Ava DuVernay](director)
+    - What about one directed by [Barry Jenkins](director)?
+    - Could you suggest one directed by [Ridley Scott](director)?
+    - I'd like a movie directed by [Park Chan-wook](director)
+    - What about one directed by [Alejandro González Iñárritu](director)?
+    - Could you suggest one directed by [Sofia Coppola](director)?
+    - I'd like a movie directed by [Darren Aronofsky](director)
+    - What about one directed by [Lynne Ramsay](director)?
+    - I'd like to watch a movie
+    - do you have other proposals?
+    - Do you suggest me another movie?
+    - I am searching for a movie to watch.
+    - I want to watch a movie
+    - What else do you propose to me?
+    - I would prefer a movie with [Frederick Preston](starring)
+    - Can you find me a movie? One that stars [Michael Cumpsty](starring)
+    - What else do you have?
+    - How about something from [Tom McMarthy](starring) or something starring [Jacqueline Brogan](starring)?
+    - I feel like I want to watch a movie, so help me find one!
+- synonym: Michael Bay
+  examples: |
+    - michael bay
+- synonym: Shia Labeouf
+  examples: |
+    - hia labeouf

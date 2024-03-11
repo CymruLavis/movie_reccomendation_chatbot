@@ -12,10 +12,10 @@ intents:
 - thank
 entities:
 - starring
-- genre
 - title
-- aggregate_rating
 - director
+- genre
+- aggregate_rating
 slots:
   title:
     type: text
@@ -67,6 +67,9 @@ responses:
 actions:
 - action_search_movie
 - utter_goodbye
+- utter_anything_else
+- utter_confirm_genre
+- utter_confirm_director
 - utter_movie_suggestion
 - reset_slots
 session_config:

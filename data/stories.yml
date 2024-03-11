@@ -143,3 +143,217 @@ stories:
     - genre: 'ACTION CRIME COMEDY '
   - intent: goodbye
   - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: FindMovies
+    entities:
+    - genre: action
+    - director: Michael Bay
+  - slot_was_set:
+    - genre: action
+  - slot_was_set:
+    - director: Michael Bay
+  - action: action_search_movie
+  - slot_was_set:
+    - title: '13 Hours: The Secret Soldiers of Benghazi'
+  - slot_was_set:
+    - aggregate_rating: 7.3
+  - slot_was_set:
+    - starring: John Krasinski
+  - slot_was_set:
+    - director: Michael Bay
+  - slot_was_set:
+    - genre: 'War, Action, History, Drama, '
+  - intent: FindMovies
+    entities:
+    - starring: labeouf
+  - slot_was_set:
+    - starring: labeouf
+  - intent: FindMovies
+    entities:
+    - starring: Shia Labeouf
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Transformers
+  - slot_was_set:
+    - aggregate_rating: 6.8
+  - slot_was_set:
+    - starring: Shia LaBeouf
+  - slot_was_set:
+    - director: Michael Bay
+  - slot_was_set:
+    - genre: 'Adventure, Science fiction, Action, '
+  - intent: acceptSuggestion
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_3
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Poor Things
+  - slot_was_set:
+    - aggregate_rating: 7.952
+  - slot_was_set:
+    - starring: Emma Stone
+  - slot_was_set:
+    - director: Yorgos Lanthimos
+  - slot_was_set:
+    - genre: 'Science fiction, Romance, Comedy, '
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_4
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: clarify_director
+    entities:
+    - title: and
+  - slot_was_set:
+    - title: and
+  - action: utter_confirm_director
+  - intent: clarify_director
+  - intent: acceptSuggestion
+  - action: utter_anything_else
+
+- story: interactive_story_5
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Poor Things
+  - slot_was_set:
+    - aggregate_rating: 7.952
+  - slot_was_set:
+    - starring: Emma Stone
+  - slot_was_set:
+    - director: Yorgos Lanthimos
+  - slot_was_set:
+    - genre: 'Science fiction, Romance, Comedy, '
+  - intent: FindMovies
+    entities:
+    - starring: Frederick Preston
+  - slot_was_set:
+    - starring: Frederick Preston
+  - action: action_search_movie
+  - slot_was_set:
+    - title: The Zookeeper's Wife
+  - slot_was_set:
+    - aggregate_rating: 7.35
+  - slot_was_set:
+    - starring: Jessica Chastain
+  - slot_was_set:
+    - director: Niki Caro
+  - slot_was_set:
+    - genre: 'Drama, History, War, '
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_6
+  steps:
+  - intent: FindMovies
+    entities:
+    - starring: Michael Cumpsty
+  - slot_was_set:
+    - starring: Michael Cumpsty
+  - action: action_search_movie
+  - slot_was_set:
+    - title: Collateral Beauty
+  - slot_was_set:
+    - aggregate_rating: 7.237
+  - slot_was_set:
+    - starring: Will Smith
+  - slot_was_set:
+    - director: David Frankel
+  - slot_was_set:
+    - genre: 'Drama, Romance, '
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+- story: interactive_story_7
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: acceptSuggestion
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_8
+  steps:
+  - intent: FindMovies
+  - action: action_search_movie
+  - slot_was_set:
+    - title: 'Dune: Part Two'
+  - slot_was_set:
+    - aggregate_rating: 8.5
+  - slot_was_set:
+    - starring: Timothée Chalamet
+  - slot_was_set:
+    - director: Denis Villeneuve
+  - slot_was_set:
+    - genre: 'Science fiction, Adventure, Action, '
+  - intent: goodbye
+  - action: utter_goodbye

@@ -1,92 +1,84 @@
 {
-  "acceptSuggestion": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 8,
-    "confused_with": {
-      "mood_great": 3,
-      "deny": 2,
-      "affirm": 2
-    }
-  },
-  "goodbye": {
-    "precision": 0.5789473684210527,
-    "recall": 0.7333333333333333,
-    "f1-score": 0.6470588235294117,
-    "support": 15,
-    "confused_with": {
-      "mood_great": 2,
-      "greet": 1
-    }
-  },
-  "FindMovies": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 44,
-    "confused_with": {
-      "bot_challenge": 20,
-      "greet": 10,
-      "mood_great": 7
-    }
-  },
-  "thank": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 6,
-    "confused_with": {
-      "goodbye": 2,
-      "bot_challenge": 2,
-      "affirm": 2
-    }
-  },
-  "bot_challenge": {
-    "precision": 0.15384615384615385,
+  "clarify_director": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.2666666666666667,
+    "f1-score": 1.0,
     "support": 4,
     "confused_with": {}
   },
-  "deny": {
-    "precision": 0.7,
+  "reset": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.8235294117647058,
-    "support": 7,
+    "f1-score": 1.0,
+    "support": 2,
     "confused_with": {}
   },
-  "affirm": {
-    "precision": 0.5454545454545454,
+  "bot_challenge": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.7058823529411764,
-    "support": 6,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "clarify_starring": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20,
     "confused_with": {}
   },
   "greet": {
-    "precision": 0.5416666666666666,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.7027027027027027,
-    "support": 13,
+    "f1-score": 1.0,
+    "support": 14,
     "confused_with": {}
   },
-  "micro avg": {
-    "precision": 0.45555555555555555,
-    "recall": 0.39805825242718446,
-    "f1-score": 0.42487046632124353,
-    "support": 103
+  "acceptSuggestion": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
   },
+  "FindMovies": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 179,
+    "confused_with": {}
+  },
+  "clarify_genre": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.3149893417985523,
-    "recall": 0.5916666666666667,
-    "f1-score": 0.39322999470058295,
-    "support": 103
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 241
   },
   "weighted avg": {
-    "precision": 0.23799989399120722,
-    "recall": 0.39805825242718446,
-    "f1-score": 0.29036586558002886,
-    "support": 103
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 241
   },
-  "accuracy": 0.39805825242718446
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 241
+  }
 }
